@@ -1,0 +1,25 @@
+<h2>Results</h2>
+
+<table>
+
+		<tr>
+			<th></th>
+			<th>Artist</th>
+			<th>Song</th>
+			<th>Album</th>
+			<th>url</th>
+		<tr>
+
+	<% results.each_with_index do |result, index| %>
+		<tr>
+			<th><%= index+1 %></th>
+			<th><%= result["ArtistName"] %></th>
+			<th><%= result["SongName"] %></th>
+			<th><%= result["AlbumName"] %></th>
+			<th><a href="<%= result["Url"] %>"><%= result["Url"] %></a></th>
+			<!-- <th><%= result["ArtistID"] %></th> -->
+			<!-- <th><%= result["AlbumID"] %></th> -->
+			<!-- <th><%= result["SongID"] %></th> -->
+		<tr>
+	<% end %>
+</table>
