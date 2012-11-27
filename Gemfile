@@ -9,6 +9,18 @@ gem 'sqlite3'
 gem 'youtube_it'
 gem 'yajl-ruby'
 
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'guard'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
