@@ -8,6 +8,18 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 
 
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'guard'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
