@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127205902) do
+ActiveRecord::Schema.define(:version => 20121127225719) do
+
+  create_table "mixtapes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "songs", :force => true do |t|
+    t.string   "artist"
+    t.string   "title"
+    t.integer  "mixtape_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"
@@ -23,4 +37,5 @@ ActiveRecord::Schema.define(:version => 20121127205902) do
     t.datetime "updated_at",       :null => false
     t.string   "remember_token"
   end
+
 end

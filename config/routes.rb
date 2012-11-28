@@ -7,5 +7,12 @@ Mixtapes::Application.routes.draw do
 
   match '/newsession', :to => 'sessions#create'
   match '/endsession', :to => 'sessions#destroy'
+
+
+  get 'mixtapes/index'
+  post 'mixtapes/new'
+  get 'mixtapes/search'
+
   root to: 'users#index'
+  
 end

@@ -6,7 +6,21 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'youtube_it'
+gem 'yajl-ruby'
 gem 'omniauth-facebook'
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'guard'
+end
 
 group :test do
   gem 'capybara'
@@ -32,6 +46,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'compass-rails'
+gem 'zurb-foundation'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

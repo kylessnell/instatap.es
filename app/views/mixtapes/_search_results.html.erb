@@ -1,0 +1,30 @@
+<h3 style="padding-bottom:20px; border-bottom:solid 3px #ddd"><%= "#{results.length} Results for '#{params[:query]}'" %></h3>
+
+<table style="text-align:left;">
+
+	<% results.each_with_index do |result, index| %>
+		<tr>
+			<th style="padding-right:20px"><%= result["ArtistName"] %></th>
+			<th style="padding-right:20px"><%= result["SongName"] %></th>
+			<th style="padding-right:20px"><%= link_to "Link", result["Url"], :target => "_blank" %></th>
+			<th>
+				<a href="" id="a_<%= index %>" class="pick_song">Add</a>
+				<!-- Hidden artist + title that will be grabbed by jquery to display in the mixtape div  -->
+				<div style="display:none;" id="result_a_<%= index %>"><%= result["ArtistName"] %> - <%= result["SongName"] %></div>
+				<!-- Hidden fields that will be use to send the mixtape and its songs to the controller -->
+				<div style="display:none;" id="hidden_a_<%= index %>">
+					<input type="hidden" id="artist_a_<%= index %>"><%= result["ArtistName"] %></input>
+					<input type="hidden" id="title_a_<%= index %>"><%= result["SongName"] %></input>
+				</div>
+			</th>
+		<tr>
+	<% end %>
+
+	<script>
+		$('.pick_song').bind('click', function() {
+       $('#results_id').append($('#result_'+this.id)[0].innerHTML + '<br>');
+       return false;
+		});
+	</script>
+
+</table>

@@ -6,7 +6,10 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+*.DS_Store
 /tmp
 
 .DS_store
+/config/locales/facebook_config.rb
 facebook_config.rb
+
