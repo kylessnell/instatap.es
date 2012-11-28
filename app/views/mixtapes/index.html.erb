@@ -1,8 +1,1 @@
-<%= form_tag mixtapes_search_path, :remote => true, :method => 'get' do |f| %>
-	<h2><%= label_tag "Search for an artist or a song" %></h2>
-	<%= text_field_tag 'query' %>
-	<%= button_tag %>
-<% end %><br>
-
-<div id="search_results">
-<div>
+<%= button_to 'New Mixtape', :action => "new" %>

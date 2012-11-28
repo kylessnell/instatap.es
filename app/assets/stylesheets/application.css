@@ -11,3 +11,23 @@
  *= require_self
  *= require_tree .
  */
+
+#search {
+	height: 500px;
+	min-width:00px;
+	max-width:650px;
+	float:left;
+	padding-right: 50px;
+	margin: 100px 100px 0 50px;
+	border-right: solid;
+}
+
+#mixtape {
+	width:400px;
+	margin: 100px 0 0 0;
+	float:left;
+}
+
+#results_id {
+	line-height: 26px;
+}

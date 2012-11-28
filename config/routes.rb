@@ -1,7 +1,10 @@
 Mixtapes::Application.routes.draw do
 
   root :to => "mixtapes#index"
+  
+  # MIXTAPES
   get 'mixtapes/index'
+  post 'mixtapes/new'
   get 'mixtapes/search'
 
   # The priority is based upon order of creation:
