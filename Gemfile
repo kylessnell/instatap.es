@@ -6,7 +6,19 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'omniauth-facebook'
 
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'guard'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
