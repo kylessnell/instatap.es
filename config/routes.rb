@@ -11,9 +11,8 @@ Mixtapes::Application.routes.draw do
   match '/newsession', :to => 'sessions#create'
   match '/endsession', :to => 'static_pages#home'
 
-
-  get 'mixtapes/index'
-  get 'mixtapes/new'
+  resources :mixtapes, :only => [:index, :new, :create]
+  resources :songs, :only => [:show]
   get 'mixtapes/search'
 
   root to: 'static_pages#home'
