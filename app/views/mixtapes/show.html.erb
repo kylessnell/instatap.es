@@ -1,5 +1,9 @@
 <h1>This is the mixtapes show page</h1>
 
+<div>
+  <%= link_to "Start A New Mix", endsession_path %>
+<div>
+
 <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out my new mixtape on @mixtape" data-size="large">Tweet</a>
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -18,7 +22,32 @@
 
 <div class="fb-send" data-href="http://example.com" data-font="segoe ui"></div>
 
-<%= render 'mixtape_mail_form', :mixtape => @mixtape %>
+<div>
+  <a href="#" class="tiny button" data-reveal-id="mail_form">Email your mixtape!</a>
+</div>
+
+
+<div id="mail_form" class="reveal-modal [medium]">
+  <div class="ten columns">
+    <h3>Email Your Mixtape!</h3>
+    <%= form_tag url_for(:controller => :mixtapes_mailers,
+                         :action => :create,
+                         ) do %> #:mixtape_url => @mixtape.id
+    <%= label_tag :author_name %>
+    <%= text_field_tag :author_name %>
+    <%= label_tag :recipient_name %>
+    <%= text_field_tag :recipient_name %>
+    <%= label_tag :recipient_email %>
+    <%= text_field_tag :recipient_email %>
+    <%= submit_tag('Send Mixtape') %>
+    <% end %>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+<div>
+  <%= link_to "Start A New Mix", endsession_path %>
+<div>
 
 <%= params %>
-
