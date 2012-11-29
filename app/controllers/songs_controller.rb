@@ -10,7 +10,7 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(:title => params[:title], :artist => params[:artist], :tiny_id => params[:tiny_id], :youtube_id => params[:youtube_id])
+    @song = Song.new(params[:song])
     respond_to do |format|
       format.js if @song.save
     end
