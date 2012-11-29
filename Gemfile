@@ -12,6 +12,7 @@ gem 'compass-rails'
 gem 'zurb-foundation'
 gem 'jquery-rails'
 gem 'thin'
+gem 'mail'
 
 group :test do
   gem 'capybara'
