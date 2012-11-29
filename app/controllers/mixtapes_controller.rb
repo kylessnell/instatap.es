@@ -26,4 +26,7 @@ class MixtapesController < ApplicationController
 		end	
 	end
 
+	def show
+		@mixtape = Mixtape.find_by_mixtape_url(params[:mixtape_url])
+	end
 end
