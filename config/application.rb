@@ -3,7 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 if Rails.env == 'development'
-  require_relative 'facebook_config'
+
 end
 
 if defined?(Bundler)
