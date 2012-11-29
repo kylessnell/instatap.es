@@ -12,6 +12,7 @@ gem 'compass-rails'
 gem 'zurb-foundation'
 gem 'jquery-rails'
 gem 'thin'
+gem 'rest-client'
 
 group :test do
   gem 'capybara'
@@ -44,4 +45,4 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'

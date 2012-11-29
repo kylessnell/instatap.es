@@ -1,3 +1,2 @@
-<%= hidden_field_tag "song_ids[]", @api_id %>
-<%= "#{@artist} - #{@title}" %>
-<br />
+<p><button type="button" class="yt_button secondary button" yt_id=<%= song.youtube_id %>>
+<%= "#{song.artist} - #{song.title}" %></button></p>
