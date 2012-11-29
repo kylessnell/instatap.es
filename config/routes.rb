@@ -14,9 +14,10 @@ Mixtapes::Application.routes.draw do
   match '/:mixtape_url', :to => 'mixtapes#show'
 
   resources :mixtapes, :only => [:index, :new, :create, :show]
-  resources :songs, :only => [:show]
+  resources :songs, :only => [:show, :new, :create]
+  
   get 'mixtapes/search'
 
   root to: 'static_pages#home'
-  
+
 end

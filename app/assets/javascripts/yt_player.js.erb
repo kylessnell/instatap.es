@@ -2,7 +2,7 @@ function onYouTubePlayerReady(player_id){
     yt_player = document.getElementById('my_yt_player');
 }
 
-$(document).ready(function(){
+$(document).on('ajax:complete', function(){
     var params = { allowScriptAccess: "always" };
     var atts = {id: "my_yt_player"};
     swfobject.embedSWF("http://www.youtube.com/apiplayer?enablejsapi=1", "yt_player", "0", "0", "8",null, null, params, atts);
@@ -25,6 +25,11 @@ $(document).ready(function(){
             yt_player.playVideo();
             $(this).html('Pause');
       });
+
+    $('.start_over').click(function(){
+        yt_player.pauseVideo();
+    });
+
 });
 
 

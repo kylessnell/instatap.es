@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.create
     cookies.permanent.signed[:remember_token] = user.remember_token
     #session[:user_id] = user.id
-    redirect_to mixtapes_new_path
+    redirect_to new_mixtape_path
   end
 
   def destroy
@@ -14,6 +14,6 @@ class SessionsController < ApplicationController
     #session[:user_id] = nil
     redirect_to root_url
 
-  end 
+  end
 end
 
