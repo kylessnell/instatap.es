@@ -1,5 +1,3 @@
-require 'youtube_search.rb'
-
 class MixtapesController < ApplicationController
 
   def index
@@ -11,7 +9,8 @@ class MixtapesController < ApplicationController
 
   def search
     # the query passed to TinySong can't contain spaces. 'new order' => 'new%20order'
-    @results = Search.new(params[:query]).all_songs
+    query = params[:query]
+    @results = Search.new(query.gsub(" ", "%20")).all_songs
     respond_to do |format|
       format.js {render 'search.js.erb'}
     end
