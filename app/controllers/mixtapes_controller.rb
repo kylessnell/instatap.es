@@ -1,4 +1,3 @@
-require 'youtube_search.rb'
 class MixtapesController < ApplicationController
 
   def index
@@ -16,7 +15,7 @@ class MixtapesController < ApplicationController
     end
   end
 
-	def show
-		@mixtape = Mixtape.find_by_mixtape_url(params[:mixtape_url])
-	end
+  def show
+    @mixtape = Mixtape.find_by_mixtape_url(params[:mixtape_url])
+  end
 end
