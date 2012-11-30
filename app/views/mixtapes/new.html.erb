@@ -18,11 +18,13 @@
 
 <div id="mixtape">
   <h2>Your mixtape</h2>
+
   <%= form_for @mixtape do |f| %>
-  <div id="new_mixtape">
-  </div>
+  <ul id="new_mixtape" style="list-style-type:none; margin: 0; padding: 0; width: 60%;">
+  </ul>
   <%= button_to 'Create', mixtapes_path %>
   <% end %>
+
 </div>
 
 <%= link_to "Start Over", endsession_path, :class => "button start_over" %>
