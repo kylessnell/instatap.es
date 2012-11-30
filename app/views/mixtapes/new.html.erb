@@ -1,5 +1,5 @@
 <div id="search">
-  <%= form_for mixtapes_search_path, :method => 'get' do |f| %>
+  <%= form_for search_mixtapes_path, :method => 'get' do |f| %>
     <h2><%= f.label "Search for an artist or a song" %></h2>
     <%= f.text_field params[:q], :id=>'q' %>
     <%end%><br/><br/>
@@ -18,8 +18,8 @@
 
 <div id="mixtape">
   <h2>Your mixtape</h2>
-  <div id="new_mixtape">
-  </div>
+  <ul id="new_mixtape" style="list-style-type:none; margin: 0; padding: 0; width: 60%;">
+  </ul>
 
 </div>
 
