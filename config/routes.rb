@@ -5,9 +5,12 @@ Mixtapes::Application.routes.draw do
   #match 'auth/failure', to: redirect('/')
   #match 'signout', to: 'sessions#destroy', as: 'signout'
 
-  get 'mixtapes/search'
   resources :songs, :only => [:show, :new, :create]
-  resources :mixtapes, :only => [:new, :create, :show]
+  resources :mixtapes, :only => [:new, :create, :show] do
+    collection do
+      get 'search'
+    end
+  end
 
   resources :sessions, :only => [:create, :destroy]
   resources :users, :only => :index
@@ -16,7 +19,6 @@ Mixtapes::Application.routes.draw do
   match '/newsession', :to => 'sessions#create'
   match '/endsession', :to => 'static_pages#home'
   match '/:mixtape_url', :to => 'mixtapes#show'
-
 
   root to: 'static_pages#home'
 

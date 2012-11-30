@@ -6,7 +6,7 @@
     <tr>
       <th style="padding-right:20px"><%= result.artist %></th>
       <th style="padding-right:20px"><%= result.title %></th>
-      <th><%= link_to "Add", songs_path(:title => result.title, :artist => result.artist, :tiny_id => result.tiny_id), :remote => true, :method => 'post' %></th>
+      <th><%= button_to "Add", songs_path(:title => result.title, :artist => result.artist, :tiny_id => result.tiny_id), :remote => true, :method => 'post', :class => "add_song_button" %></th>
     <tr>
   <% end %>
 

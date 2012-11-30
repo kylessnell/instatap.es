@@ -1,9 +1,16 @@
 <div id="search">
-  <%= form_tag mixtapes_path, :method => 'get' do %>
-    <h2><%= label_tag "Search for an artist or a song" %></h2>
-    <%= text_field_tag(:q, params[:q]) %>
-  <% end %>
+  <%= form_for mixtapes_search_path, :method => 'get' do |f| %>
+    <h2><%= f.label "Search for an artist or a song" %></h2>
+    <%= f.text_field params[:q], :id=>'q' %>
+    <%end%><br/><br/>
 
+
+<%= form_for @song, :url => songs_path, :remote => true, :method => 'post' do |f| %>
+  <%= f.hidden_field :artist, :id => "artist_field" %>
+  <%= f.hidden_field :title, :id => "title_field" %>
+  <%= f.hidden_field :tiny_id, :id=> "tiny_id_field" %>
+  <%= f.submit "submit", :id => "create_song_submit", :style => 'visibility: hidden' %>
+<% end %>
   <div id="search_results">
   </div>
 
@@ -11,9 +18,9 @@
 
 <div id="mixtape">
   <h2>Your mixtape</h2>
-  <%= form_for @mixtape do |f| %>
-    <%= button_to 'Create', mixtapes_path %>
-  <% end %>
+  <div id="new_mixtape">
+  </div>
+
 </div>
 
 <%= link_to "Start Over", endsession_path, :class => "button start_over" %>
