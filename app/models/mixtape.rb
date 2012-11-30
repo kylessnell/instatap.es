@@ -6,9 +6,7 @@ class Mixtape < ActiveRecord::Base
   before_save :create_mixtape_url
 
   def song_ids=(song_ids)
-    self.songs = Song.find_all_by_youtube_id(song_ids)
-    # this should be:
-    # self.songs = Song.find_all_by_id(song_ids)
+    self.songs = Song.where(:youtube_id => song_ids)
   end
 
   def song_ids

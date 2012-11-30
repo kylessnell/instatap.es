@@ -18,7 +18,7 @@ class MixtapesController < ApplicationController
 
   def create
     @mixtape = Mixtape.create(params[:mixtape])
-    #@mixtape.songs = Song.find_all_by_id(song_ids)
+    redirect_to mixtape_url(@mixtape)
   end
 
 	def show
