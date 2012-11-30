@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20121129200802) do
   end
 
   create_table "mixtapes_songs", :force => true do |t|
+    t.integer "user_id"
     t.integer "mixtape_id"
     t.integer "track_number"
     t.integer "song_id"
