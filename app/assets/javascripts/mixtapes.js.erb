@@ -10,5 +10,14 @@ $(document).ready(function () {
             $('#q').tokenInput("remove", {id: item.id});
         }
     });
-    $('#new_mixtape').sortable({handle:"button", axis:"y", cancel:''}).disableSelection();
+    $('#mixtape_track_list').sortable({
+        handle:"button",
+        axis:"y",
+        cancel:'',
+        stop: function(event, ui){
+            $('#mixtape_track_list li').each(function(index){
+                $(this).children('button').attr('list_position', index + 1);
+            });
+        }
+    }).disableSelection();
 });
