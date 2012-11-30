@@ -8,6 +8,6 @@
       <th style="padding-right:20px"><%= result.title %></th>
       <th><%= link_to "Add", songs_path(:title => result.title, :artist => result.artist, :tiny_id => result.tiny_id), :remote => true, :method => 'post' %></th>
     <tr>
-<%end%>
+  <% end %>
 
 </table>

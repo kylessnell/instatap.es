@@ -15,7 +15,6 @@ gem 'thin'
 gem 'mail'
 gem 'rest-client'
 
-
 group :test do
   gem 'capybara'
   gem 'database_cleaner'

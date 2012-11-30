@@ -6,8 +6,8 @@ Mixtapes::Application.routes.draw do
   #match 'signout', to: 'sessions#destroy', as: 'signout'
 
   get 'mixtapes/search'
-  resources :mixtapes, :only => [:index, :new, :create]
   resources :songs, :only => [:show, :new, :create]
+  resources :mixtapes, :only => [:new, :create, :show]
 
   resources :sessions, :only => [:create, :destroy]
   resources :users, :only => :index

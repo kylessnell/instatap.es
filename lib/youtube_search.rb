@@ -2,12 +2,12 @@ YT_PLAYER = YouTubeIt::Client.new(:dev_key => "AI39si6i1YvfcT64qFK06lhB9oT_4NuGk
 
 class Search
   def initialize(query)
-    @query = query.gsub!(" ", "%20")
     @key = "0af53736101aebb91f579527433c9208"
+    @query = query
   end
 
   def search_results
-    JSON.parse(RestClient.get"http://tinysong.com/s/#{@query}?format=json&limit=#{@limit}&key=#{@key}")
+    JSON.parse(RestClient.get"http://tinysong.com/s/#{@query}?format=json&key=#{@key}")
   end
 
   def all_songs
