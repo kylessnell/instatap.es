@@ -5,7 +5,7 @@ class MixtapesMailersController < ApplicationController
     @author_name = params[:author_name]
     @mixtape = Mixtape.find_by_mixtape_url(params[:mixtape_url])
     MixtapesMailer.mixtape_delivery(params[:recipient_email]).deliver
-    redirect_to mixtape_path(@mixtape)
+    redirect_to mixtape_play_path(@mixtape.mixtape_url)
   end
 
 end
