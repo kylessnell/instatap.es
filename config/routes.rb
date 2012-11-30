@@ -7,7 +7,7 @@ Mixtapes::Application.routes.draw do
 
   get 'mixtapes/search'
   resources :songs, :only => [:show, :new, :create]
-  resources :mixtapes, :only => [:index, :new, :create, :show]
+  resources :mixtapes, :only => [:new, :create, :show]
 
   resources :sessions, :only => [:create, :destroy]
   resources :users, :only => :index

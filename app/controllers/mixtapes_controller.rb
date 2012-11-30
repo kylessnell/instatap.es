@@ -18,7 +18,7 @@ class MixtapesController < ApplicationController
 
   def create
     @mixtape = Mixtape.create(params[:mixtape])
-    redirect_to mixtape_url(@mixtape)
+    redirect_to "/#{@mixtape.mixtape_url}"
   end
 
 	def show
