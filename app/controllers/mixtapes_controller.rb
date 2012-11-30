@@ -1,5 +1,4 @@
 class MixtapesController < ApplicationController
-
   def index
   end
 
@@ -8,17 +7,16 @@ class MixtapesController < ApplicationController
   end
 
   def search
-    # the query passed to TinySong can't contain spaces. 'new order' => 'new%20order'
-    query = params[:query]
-    @results = Search.new(query.gsub(" ", "%20")).all_songs
+    @results = TinySonger.search(params[:query])
+    @results.each { |r| puts r.title }
     respond_to do |format|
-      format.js {render 'search.js.erb'}
+      format.js
     end
   end
 
   def create
     @mixtape = Mixtape.create(params[:mixtape])
-    redirect_to "/#{@mixtape.mixtape_url}"
+    redirect_to mixtape_play_path(@mixtape.mixtape_url)
   end
 
   def show

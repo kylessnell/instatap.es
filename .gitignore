@@ -10,6 +10,6 @@
 /tmp
 
 .DS_store
-/config/locales/facebook_config.rb
-facebook_config.rb
+/config/locales/api_keys_config.rb
+api_keys_config.rb
 

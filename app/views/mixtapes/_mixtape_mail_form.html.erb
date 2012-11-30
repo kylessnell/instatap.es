@@ -1,23 +1,17 @@
-
-<!--   <form>
-    Author name: <input type="text" name="author_name">
-    Recipient's name: <input type="text" name="recipient_name">
-    Recipient's email: <input type="text" name="email">
-    <input type="submit" value="Submit">
-  </form> -->
 <div id="mail_form" class="reveal-modal [medium]">
 
   <div class="ten columns">
     <h3>Email Your Mixtape!</h3>
     <%= form_tag url_for(:controller => :mixtapes_mailers,
                          :action => :create,
-                         ) do %> #:mixtape_url => :mixtape_url
+                         ) do %>
     <%= label_tag :author_name %>
     <%= text_field_tag :author_name %>
     <%= label_tag :recipient_name %>
     <%= text_field_tag :recipient_name %>
     <%= label_tag :recipient_email %>
     <%= text_field_tag :recipient_email %>
+    <%= hidden_field_tag :mixtape_id, mixtape.id %>
     <%= submit_tag('Send Mixtape') %>
     <% end %>
   </div>
