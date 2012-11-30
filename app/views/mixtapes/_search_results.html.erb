@@ -6,16 +6,8 @@
     <tr>
       <th style="padding-right:20px"><%= result.artist %></th>
       <th style="padding-right:20px"><%= result.title %></th>
-      <th><%= link_to "Add", songs_path(:song => { :title => result.title, :artist => result.artist, :youtube_id => result.youtube_id, :tiny_id => result.tiny_id }), :remote => true, :method => 'post' %></th>
+      <th><%= link_to "Add", songs_path(:title => result.title, :artist => result.artist, :tiny_id => result.tiny_id), :remote => true, :method => 'post' %></th>
     <tr>
   <% end %>
-
-  <!-- The script needs to be called after the results have been rendered (not on document.ready), otherwise '.pick_song' doesnt exist and an event can't be bound -->
-  <script>
-    // $('.pick_song').bind('click', function() {
-  //      $('#results_id').append($('#result_'+ this.id)[0].innerHTML + '<br>');
-  //      return false;
-    // });
-  </script>
 
 </table>

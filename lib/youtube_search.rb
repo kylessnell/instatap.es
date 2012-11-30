@@ -1,6 +1,8 @@
+YT_PLAYER = YouTubeIt::Client.new(:dev_key => "AI39si6i1YvfcT64qFK06lhB9oT_4NuGkRnSHmyrH7XmFkOx6jtLimBtDl-NOX7-RSqqcBKH-RpuJHae3Xo6ulUT8paIk9Nh1w")
+
 class Search
   def initialize(query)
-    @query = query.gsub(" ", "%20")
+    @query = query.gsub!(" ", "%20")
     @key = "0af53736101aebb91f579527433c9208"
   end
 
@@ -20,7 +22,6 @@ end
 class Result
   def initialize(hash_data)
     @hash_data = hash_data
-    @yt_player = YouTubeIt::Client.new(:dev_key => "AI39si6i1YvfcT64qFK06lhB9oT_4NuGkRnSHmyrH7XmFkOx6jtLimBtDl-NOX7-RSqqcBKH-RpuJHae3Xo6ulUT8paIk9Nh1w")
   end
 
   def tiny_id
@@ -40,10 +41,12 @@ class Result
   end
 
   def youtube_id
-    video_data = @yt_player.videos_by(:query => (artist + " " + title), :categories => [:music])
+      video_data = YT_PLAYER.videos_by(:query => (artist + " " + title), :categories => [:music])
+      video_data.videos[0].video_id.split(':')[-1]
+  end
+
+  def self.get_youtube_id(artist, title)
+    video_data = YT_PLAYER.videos_by(:query => (artist + " " + title), :categories => [:music])
     video_data.videos[0].video_id.split(':')[-1]
   end
 end
-
-
-#example: Search.new("deerhunter").all_songs[4].youtube_id
