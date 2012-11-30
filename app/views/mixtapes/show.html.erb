@@ -26,25 +26,7 @@
   <a href="#" class="tiny button" data-reveal-id="mail_form">Email your mixtape!</a>
 </div>
 
-
-<div id="mail_form" class="reveal-modal [medium]">
-  <div class="ten columns">
-    <h3>Email Your Mixtape!</h3>
-    <%= form_tag url_for(:controller => :mixtapes_mailers,
-                         :action => :create,
-                         ) do %> #:mixtape_url => @mixtape.id
-    <%= label_tag :author_name %>
-    <%= text_field_tag :author_name %>
-    <%= label_tag :recipient_name %>
-    <%= text_field_tag :recipient_name %>
-    <%= label_tag :recipient_email %>
-    <%= text_field_tag :recipient_email %>
-    <%= submit_tag('Send Mixtape') %>
-    <% end %>
-  </div>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
-
+<%= render 'mixtape_mail_form', :mixtape => @mixtape %>
 
 <div>
   <%= link_to "Start A New Mix", endsession_path %>

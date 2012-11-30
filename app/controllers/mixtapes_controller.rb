@@ -1,5 +1,4 @@
 class MixtapesController < ApplicationController
-
   def index
   end
 
@@ -10,7 +9,7 @@ class MixtapesController < ApplicationController
 
   def search
     query = params[:q]
-    @results = Search.new(query.gsub(" ", "%20")).all_songs
+    @results = TinySonger.search(params[:q])
     respond_to do |format|
       format.json{ render :json => @results.collect{ |n| {:id => n.tiny_id, :name => "#{n.artist}: #{n.title}"}}.to_json }
     end
@@ -18,7 +17,7 @@ class MixtapesController < ApplicationController
 
   def create
     @mixtape = Mixtape.create(params[:mixtape])
-    redirect_to "/#{@mixtape.mixtape_url}"
+    redirect_to mixtape_play_path(@mixtape.mixtape_url)
   end
 
   def show
