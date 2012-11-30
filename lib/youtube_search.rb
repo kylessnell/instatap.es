@@ -7,7 +7,7 @@ class Search
   end
 
   def search_results
-    JSON.parse(RestClient.get"http://tinysong.com/s/#{@query}?format=json&key=#{@key}")
+    JSON.parse(RestClient.get"http://tinysong.com/s/#{@query}?format=json&limit=32&key=#{@key}")
   end
 
   def all_songs

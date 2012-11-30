@@ -17,6 +17,7 @@ Mixtapes::Application.routes.draw do
   match '/endsession', :to => 'static_pages#home'
   match '/:mixtape_url', :to => 'mixtapes#show'
 
+
   root to: 'static_pages#home'
 
 end

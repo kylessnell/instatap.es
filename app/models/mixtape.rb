@@ -5,6 +5,8 @@ class Mixtape < ActiveRecord::Base
   has_many :songs, :through => :mixtapes_songs
   before_save :create_mixtape_url
 
+  self.include_root_in_json = false
+
   def song_ids=(song_ids)
     self.songs = Song.where(:youtube_id => song_ids)
   end

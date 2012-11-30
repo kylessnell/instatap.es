@@ -148,6 +148,8 @@ GEM
       activesupport (= 3.2.8)
       bundler (~> 1.0)
       railties (= 3.2.8)
+    rails_tokeninput (1.6.0)
+      railties (>= 3.1.0)
     railties (3.2.8)
       actionpack (= 3.2.8)
       activesupport (= 3.2.8)
@@ -237,6 +239,7 @@ DEPENDENCIES
   pg
   quiet_assets
   rails (= 3.2.8)
+  rails_tokeninput
   rest-client
   rspec-rails
   sass-rails (~> 3.2.3)
