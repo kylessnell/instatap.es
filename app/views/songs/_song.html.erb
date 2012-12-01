@@ -1,6 +1,5 @@
 <li>
   <%= hidden_field_tag "mixtape[song_ids][]", song.id%>
   <%= button_tag "#{song.artist} - #{song.title}", :class => "yt_button secondary button", :list_position => "", :yt_id => song.youtube_id, :type => "button" %>
+  <%= button_tag "x", :class => "remove" %>
 </li>
-
-<%= javascript_tag("$('ul li:last-child .yt_button').attr('list_position', $('ul li:last-child').index()+1)" ) %>
