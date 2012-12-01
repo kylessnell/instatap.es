@@ -6,6 +6,6 @@ class MixtapesSong < ActiveRecord::Base
   before_create :set_track_number
 
   def set_track_number
-    self.track_number = mixtape.songs.length + 1
+    self.track_number = mixtape.songs.all.length + 1
   end
 end

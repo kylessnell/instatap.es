@@ -7,12 +7,15 @@ class Mixtape < ActiveRecord::Base
 
   self.include_root_in_json = false
 
-  def song_ids=(song_ids)
-    self.songs = Song.where(:youtube_id => song_ids)
+  def song_ids=(new_song_ids)
+    mixtapes_songs.delete_all
+    new_song_ids.each_with_index do |song_id|
+      songs << Song.find(song_id)
+    end
   end
 
   def song_ids
-    songs.pluck(:youtube_id)
+    songs.pluck(:id)
   end
 
 private
