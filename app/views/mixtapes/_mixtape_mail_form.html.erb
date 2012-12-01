@@ -11,8 +11,8 @@
     <%= text_field_tag :recipient_name %>
     <%= label_tag :recipient_email %>
     <%= text_field_tag :recipient_email %>
-    <%= hidden_field_tag :mixtape_id, mixtape.id %>
     <%= submit_tag('Send Mixtape') %>
+    <%= hidden_field_tag :mixtape_url, mixtape_url %>
     <% end %>
   </div>
   <a class="close-reveal-modal">&#215;</a>
