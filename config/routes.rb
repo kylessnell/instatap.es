@@ -2,10 +2,6 @@ Mixtapes::Application.routes.draw do
 
   get "static_pages/home"
 
-  #match 'auth/:provider/callback', to: 'sessions#create'
-  #match 'auth/failure', to: redirect('/')
-  #match 'signout', to: 'sessions#destroy', as: 'signout'
-
   resources :songs, :only => [:show, :new, :create]
   resources :mixtapes, :only => [:new, :create, :show, :update] do
     collection do
@@ -19,8 +15,11 @@ Mixtapes::Application.routes.draw do
   resources :mixtapes_mailers, :only => :create
 
   match '/newsession', :to => 'sessions#create'
-  match '/endsession', :to => 'static_pages#home'
+  match '/endsession', :to => 'sessions#destroy'
   match '/:mixtape_url', :to => 'mixtapes#show', :as => "mixtape_play"
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
 
   root to: 'static_pages#home'
 
