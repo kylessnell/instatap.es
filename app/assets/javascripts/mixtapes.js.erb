@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#q").tokenInput("/mixtapes/search.json", {
+    $("#q").tokenInput("/searches/new.json", {
         tokenLimit: 1,
         onAdd: function(item){
             var items=item.name.split(': ')
@@ -11,9 +11,15 @@ $(document).ready(function () {
         }
     });
 
+    $(document).on( 'click', 'button.remove', function(event){
+        event.preventDefault();
+        $(this).parent().remove();
+    } );
+
     $('#mixtape_track_list').sortable({
         handle:"button",
         axis:"y",
         cancel:''
     }).disableSelection();
 });
+

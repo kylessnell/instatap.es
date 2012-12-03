@@ -1,5 +1,4 @@
 class SongsController < ApplicationController
-
   def show
     @artist = params[:artist]
     @title = params[:title]
@@ -17,6 +16,4 @@ class SongsController < ApplicationController
       format.js
     end
   end
-
-
 end

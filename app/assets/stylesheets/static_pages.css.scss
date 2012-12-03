@@ -1,3 +1,49 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div#band {
+  position: absolute;
+  width: 100%;
+  background-color: rgba(20, 160, 226, 0.22);
+  height: 50px;
+}
+
+div.padding {
+  height: 100px;
+}
+
+nav#header {
+  height: 50px;
+  background-color: rgba(20, 160, 226, 0.22);
+  ul {
+    list-style-type:none;
+    display: inline;
+  }
+  li#header_logo {
+    float: left;
+  }
+  li#sign_in {
+    float: right;
+    display: inline;
+  }
+}
+
+div.play {
+  h1 {
+    text-align: center
+  }
+  table {
+    width: 100%;
+  }
+}
+
+div.get_started {
+  h1 {
+    text-align: center
+  }
+  a.get_started {
+    width: 100%;
+  }
+}
