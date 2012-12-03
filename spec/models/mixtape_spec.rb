@@ -22,13 +22,13 @@ describe Mixtape do
   end
 
   describe "song_ids=" do
-    it "creates mixtapes_songs records with sequential track numbers" do
+    it "creates tracks records with sequential track numbers" do
       song1 = create(:song)
       song2 = create(:song)
       mixtape = create(:mixtape, :song_ids => [song1.id, song2.id])
-      mixtapes_songs = mixtape.mixtapes_songs
-      mixtapes_songs.first.track_number.should eq 1
-      mixtapes_songs.last.track_number.should eq 2
+      tracks = mixtape.tracks
+      tracks.first.position.should eq 1
+      tracks.last.position.should eq 2
     end
   end
 
