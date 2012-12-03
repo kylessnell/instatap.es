@@ -16,7 +16,7 @@ Mixtapes::Application.routes.draw do
 
   match '/newsession', :to => 'sessions#create'
   match '/endsession', :to => 'sessions#destroy'
-  match '/:mixtape_url', :to => 'mixtapes#show', :as => "mixtape_play"
+  match '/:url', :to => 'mixtapes#show', :as => "mixtape_play"
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
