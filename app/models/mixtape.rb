@@ -3,7 +3,7 @@ class Mixtape < ActiveRecord::Base
   belongs_to :user
   has_many :mixtapes_songs
   has_many :songs, :through => :mixtapes_songs
-  before_save :create_mixtape_url
+  before_save :create_url
 
   self.include_root_in_json = false
 
@@ -20,7 +20,7 @@ class Mixtape < ActiveRecord::Base
 
 private
 
-  def create_mixtape_url
-    self.mixtape_url = SecureRandom.hex(3)
+  def create_url
+    self.url = SecureRandom.hex(3)
   end
 end

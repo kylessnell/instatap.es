@@ -6,7 +6,7 @@ describe Mixtape do
     build(:mixtape, name: nil).should_not be_valid
   end
 
-  it "is creates a mixtape_url on create" do
+  it "is creates a url on create" do
     create(:mixtape).should be_valid
   end
 
@@ -14,10 +14,10 @@ describe Mixtape do
     build(:mixtape, user_id: nil).should_not be_valid
   end
 
-  it "is invalid with a duplicate mixtape_url" do
+  it "is invalid with a duplicate url" do
     mixtape1 = create(:mixtape)
     mixtape2 = create(:mixtape)
-    mixtape2.mixtape_url = mixtape1.mixtape_url
+    mixtape2.url = mixtape1.url
     mixtape2.should_not be_valid
   end
 
