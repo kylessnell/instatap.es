@@ -5,8 +5,10 @@
     <%= form_for @mixtape do |f| %>
     <table id="mixtape_track_list">
     </table>
-    <%= button_to 'Create', mixtapes_path %>
-    <% end %>
+    <div class="three columns centered">
+      <%= button_to 'Create', mixtapes_path, :class => "button"%>
+      <% end %>
+    </div>
   </div>
 </div>
 
