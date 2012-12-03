@@ -1,12 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authorize_user
-
   helper_method :current_user
-
-  def current_user
-    @current_user ||= find_user
-  end
 
   def authorize_user
     #redirect_to root_url if current_user.nil?

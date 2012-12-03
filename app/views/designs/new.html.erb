@@ -1,0 +1,25 @@
+<%= @mixtape.url %>
+
+<%= form_for @mixtape do |f| %>
+  <div class="row left">
+    <%= f.text_field :name , :placeholder => "Give a name to this mixtape", :class =>"three columns" %>
+  </div>
+
+  <div class="row left">
+    <ul class="button-group radius">
+      <li class="color" id="red"><a href="#" class="button radius">Red Skin</a></li>
+      <li class="color" id="blue"><a href="#" class="button radius">Blue Skin</a></li>
+    </ul>  
+  </div>
+
+  <div class="row left">
+    <div id="mixtape_color">
+    </div>
+    <%= f.hidden_field :skin %>
+  </div>
+
+  <div class="row left">
+    <%= f.submit 'Share' %>
+  </div>
+
+<% end %>
