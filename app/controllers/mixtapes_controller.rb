@@ -1,4 +1,6 @@
 class MixtapesController < ApplicationController
+  include SessionsHelper
+  
   def index
   end
 
@@ -17,11 +19,23 @@ class MixtapesController < ApplicationController
 
   def create
     @mixtape = Mixtape.create(params[:mixtape])
-    redirect_to mixtape_play_path(@mixtape.mixtape_url)
+    # redirect_to mixtape_play_path(@mixtape.url)
+    if @mixtape.save
+      redirect_to new_design_path(:url => @mixtape.url)
+    else
+      render :new
+    end
   end
 
   def show
-    @mixtape = Mixtape.find_by_mixtape_url(params[:mixtape_url])
+    @mixtape = Mixtape.find_by_url(params[:url])
+  end
+
+  def update
+    @mixtape = Mixtape.find(params[:id])
+    if @mixtape.update_attributes(params[:mixtape])
+      redirect_to mixtape_play_path(@mixtape.url)
+    end
   end
 
 end

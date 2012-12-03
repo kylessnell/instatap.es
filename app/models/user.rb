@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :remember_token
   has_many :mixtapes
-  before_create :create_remember_token
+  before_create :generate_remember_token
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
 private
 
-  def create_remember_token
+  def generate_remember_token
     self.remember_token = SecureRandom.urlsafe_base64
   end
 end
