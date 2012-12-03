@@ -1,38 +1,22 @@
-<h1>This is the mixtapes show page</h1>
+<div id="user_nav">
+  <% if current_user %>
+    Signed in as <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% end %>
+</div>
+
+<h3><%= @mixtape.name %></h3>
+
+<div>
+  <% @mixtape.songs.each do |song| %>
+  <%= "#{song.artist}: #{song.title}" %><br />
+  <% end %>
+</div>
+
+<% if !current_user %>
+  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %> to send the mix to Facebook friends.
+<% end %>
 
 <div>
   <%= link_to "Start A New Mix", endsession_path %>
 <div>
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out my new mixtape on @mixtape" data-size="large">Tweet</a>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-<div class="fb-send" data-href="http://example.com" data-font="segoe ui"></div>
-
-<div>
-  <a href="#" class="tiny button" data-reveal-id="mail_form">Email your mixtape!</a>
-</div>
-
-<%= render 'mixtape_mail_form', :mixtape_url => @mixtape.mixtape_url %>
-
-<div>
-  <%= link_to "Start A New Mix", endsession_path %>
-<div>
-
-<%= params %>
-<div>
-<%= "mixtape url is: #{@mixtape.mixtape_url}" %>
-</div>
