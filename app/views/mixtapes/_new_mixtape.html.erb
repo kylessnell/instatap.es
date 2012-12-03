@@ -1,0 +1,12 @@
+<div class="six columns play">
+  <%= image_tag("the_muxtape.png") %>
+  <div id="mixtape">
+    <h2>Your mixtape</h2>
+    <%= form_for @mixtape do |f| %>
+    <ul id="mixtape_track_list" style="list-style-type:none; margin: 0; padding: 0; width: 60%;">
+    </ul>
+    <%= button_to 'Create', mixtapes_path %>
+    <% end %>
+  </div>
+</div>
+

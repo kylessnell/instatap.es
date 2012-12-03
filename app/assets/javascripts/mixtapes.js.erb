@@ -11,9 +11,15 @@ $(document).ready(function () {
         }
     });
 
+    $(document).on( 'click', 'button.remove', function(event){
+        event.preventDefault();
+        $(this).parent().remove();
+    } );
+
     $('#mixtape_track_list').sortable({
         handle:"button",
         axis:"y",
         cancel:''
     }).disableSelection();
 });
+
