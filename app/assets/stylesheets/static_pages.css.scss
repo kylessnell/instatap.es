@@ -9,6 +9,10 @@ div#band {
   height: 50px;
 }
 
+div.padding {
+  height: 100px;
+}
+
 nav#header {
   height: 50px;
   background-color: rgba(20, 160, 226, 0.22);
@@ -28,6 +32,9 @@ nav#header {
 div.play {
   h1 {
     text-align: center
+  }
+  table {
+    width: 100%;
   }
 }
 
