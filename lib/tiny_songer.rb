@@ -4,6 +4,11 @@
 
 require_relative '../config/api_keys_config.rb'
 
+FACEBOOK_KEY = '482081311836995'
+FACEBOOK_SECRET = 'db541a0ee6682b9802cb44523c56babf'
+TINYSONG_API_KEY = "0af53736101aebb91f579527433c9208"
+YOUTUBE_API_KEY = "AI39si6i1YvfcT64qFK06lhB9oT_4NuGkRnSHmyrH7XmFkOx6jtLimBtDl-NOX7-RSqqcBKH-RpuJHae3Xo6ulUT8paIk9Nh1w"
+
 module TinySonger
   def self.search(query)
     all_songs(search_results(query))

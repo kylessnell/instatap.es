@@ -1,4 +1,5 @@
 Mixtapes::Application.routes.draw do
+
   get "static_pages/home"
 
   #match 'auth/:provider/callback', to: 'sessions#create'
@@ -6,12 +7,13 @@ Mixtapes::Application.routes.draw do
   #match 'signout', to: 'sessions#destroy', as: 'signout'
 
   resources :songs, :only => [:show, :new, :create]
-  resources :mixtapes, :only => [:new, :create, :show] do
+  resources :mixtapes, :only => [:new, :create, :show, :update] do
     collection do
       get 'search'
     end
   end
 
+  resources :designs, :only => :new
   resources :sessions, :only => [:create, :destroy]
   resources :users, :only => :index
   resources :mixtapes_mailers, :only => :create

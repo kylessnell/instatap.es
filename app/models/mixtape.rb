@@ -1,5 +1,5 @@
 class Mixtape < ActiveRecord::Base
-  attr_accessible :name, :song_ids
+  attr_accessible :name, :song_ids, :skin
   belongs_to :user
   has_many :mixtapes_songs
   has_many :songs, :through => :mixtapes_songs
