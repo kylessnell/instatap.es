@@ -1,6 +1,7 @@
 <%= render 'mixtapes/share' if current_user && owner(@mixtape.url) %>
 
 <h3><%= @mixtape.name %></h3>
+
 <h4><%= link_to "http://localhost:3000/#{@mixtape.url}", "http://localhost:3000/#{@mixtape.url}" %></h4>
 
 <%= render 'layouts/play' %>

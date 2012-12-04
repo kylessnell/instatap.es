@@ -1,14 +1,10 @@
 <!-- SOCIAL PLUGINS -->
-
 <a href="#" class="tiny button" data-reveal-id="mail_form">Email your mixtape!</a>
 <%= render 'mixtape_mail_form', :url => @mixtape.url %>
-
 <a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out my new mixtape on @mixtape" data-size="large">Tweet</a>
 
 
 <div class="fb-send" data-href=<%= @mixtape.url %> data-font="lucida grande"></div>
-
-
 <div id="fb-root"></div>
 <script>
   window.fbAsyncInit = function() {
