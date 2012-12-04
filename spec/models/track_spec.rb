@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Track do
 
-  it 'is invalid without a track number' do
+  it 'is invalid without a position' do
     track = create(:track)
     track.position = nil
     track.should_not be_valid
