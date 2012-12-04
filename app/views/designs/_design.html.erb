@@ -1,0 +1,27 @@
+<div class="five columns" >
+  <%= form_for @mixtape do |f| %>
+    <div class="row">
+      <%= f.text_field :name , :placeholder => "Give a name to this mixtape", :class =>"" %>
+    </div>
+
+    <div class="row">
+        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "red" %>
+        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "blue" %>
+        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "blue" %>
+        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "blue" %>
+        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "red" %>
+        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "red" %>
+    </div>
+
+    <div class="row">
+      <div id="mixtape_color">
+      </div>
+      <%= f.hidden_field :skin %>
+    </div>
+
+    <div class="four columns centered">
+      <%= f.submit 'Share', :class => "button" %>
+    </div>
+
+  <% end %>
+</div>
