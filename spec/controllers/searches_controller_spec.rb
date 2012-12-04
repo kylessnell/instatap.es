@@ -2,11 +2,7 @@ require 'spec_helper'
 
 describe SearchesController do
 
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
-      response.should be_success
-    end
+  describe 'GET #new' do
+    it "returns JSON-formatted content" 
   end
-
 end

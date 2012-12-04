@@ -2,8 +2,14 @@ require 'spec_helper'
 
 describe Mixtape do 
 
-  it "is creates a url on create" do
-    create(:mixtape).should be_valid
+  it "generates a url on create" do
+    mixtape = create(:mixtape)
+    mixtape.url.should_not be_nil
+  end
+  
+  it "generates a user id on create" do
+    mixtape = create(:mixtape)
+    mixtape.user_id.should_not be_nil
   end
 
   it "is invalid without a user id" do

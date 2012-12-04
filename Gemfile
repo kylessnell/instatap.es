@@ -29,6 +29,7 @@ group :development, :test do
   gem 'ruby_gntp'
   gem 'quiet_assets'
   gem 'rb-fsevent', :require => false
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :assets do
