@@ -10,16 +10,25 @@ $(document).ready(function () {
             $('#q').tokenInput("remove", {id: item.id});
         }
     });
+	
+	// Return a helper with preserved width of cells
+	var fixHelper = function(e, ui) {
+		ui.children().each(function() {
+			$(this).width($(this).width());
+		});
+		return ui;
+	};
 
     $(document).on( 'click', 'button.remove', function(event){
         event.preventDefault();
-        $(this).parent().remove();
-    } );
+        $(this).parent().parent().remove();
+    });
 
-    $('#mixtape_track_list').sortable({
+    $('#mixtape_track_list tbody').sortable({
         handle:"button",
         axis:"y",
-        cancel:''
+        cancel:'',
+        helper: fixHelper
     }).disableSelection();
 });
 
