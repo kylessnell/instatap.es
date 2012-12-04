@@ -1,12 +1,12 @@
 <div id="design_picker" class="five columns" >
   <%= form_for @mixtape do |f| %>
     <div id="name_picker" class="row">
-      <h3 class="design_title">Give your mixtape a name.</h3>
+      <h3 class="section_title">Give your mixtape a name.</h3>
       <%= f.text_field :name , :placeholder => "eg. Baltimore Classics, 70's Disco, etc", :class =>"" %>
     </div>
 
     <div id="skin_picker" class="row">
-      <h3 class="design_title">And pick a bad-ass skin.</h3>
+      <h3 class="section_title">And pick a bad-ass skin.</h3>
       <div id="skins" class="row">
         <%= image_tag("the_muxtape.png", :alt => "test image", :class => "color thumbnail", id: "1") %>
         <%= image_tag("the_muxtape.png", :alt => "test image", :class => "color thumbnail", id: "2") %>
@@ -23,9 +23,9 @@
       <%= f.hidden_field :skin %>
     </div>
 
-    <div class="four columns centered">
-      <%= f.submit 'Share', :class => "button" %>
-    </div>
+      <div id="next_button" class="four columns centered">
+        <%= button_to 'Next', mixtapes_path, :class => "button"%>
+      </div>
 
   <% end %>
 </div>
