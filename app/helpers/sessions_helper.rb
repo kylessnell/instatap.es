@@ -16,11 +16,17 @@ module SessionsHelper
       @current_user = nil      
     end
     @current_user
-    # @current_user ? (puts "Current User ID is: #{@current_user.id}") : (puts "Current user is nil")
-    # puts "*" * 100
   end
 
-  def current_user?
-    user == current_user
+  def owner(url)
+    puts "session[:user_id] : #{session[:user_id]}"
+    @mixtape = Mixtape.find_by_url(url)
+    puts "@mixtape.user_id : #{@mixtape.user_id}"
+    session[:user_id] == @mixtape.user_id
   end
+
+  def facebook_user?
+    self.current_user = User.from_omniauth(env["omniauth.auth"])
+  end
+  
 end
