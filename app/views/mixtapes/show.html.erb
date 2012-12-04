@@ -1,22 +1,6 @@
-<div id="user_nav">
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out", signout_path, id: "sign_out" %>
-  <% end %>
-</div>
+<%= render 'mixtapes/share' if current_user && owner(@mixtape.url) %>
 
 <h3><%= @mixtape.name %></h3>
+<h4><%= link_to "http://localhost:3000/#{@mixtape.url}", "http://localhost:3000/#{@mixtape.url}" %></h4>
 
-<div>
-  <% @mixtape.songs.each do |song| %>
-  <%= "#{song.artist}: #{song.title}" %><br />
-  <% end %>
-</div>
-
-<% if !current_user %>
-  <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %> to send the mix to Facebook friends.
-<% end %>
-
-<div>
-  <%= link_to "Start A New Mix", endsession_path %>
-<div>
+<%= render 'layouts/play' %>
