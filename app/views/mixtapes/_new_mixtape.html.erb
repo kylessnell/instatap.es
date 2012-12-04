@@ -3,10 +3,12 @@
   <div id="mixtape">
     <h2>Your mixtape</h2>
     <%= form_for @mixtape do |f| %>
-    <ul id="mixtape_track_list" style="list-style-type:none; margin: 0; padding: 0; width: 60%;">
-    </ul>
-    <%= button_to 'Create', mixtapes_path %>
-    <% end %>
+    <table id="mixtape_track_list">
+    </table>
+    <div class="three columns centered">
+      <%= button_to 'Create', mixtapes_path, :class => "button"%>
+      <% end %>
+    </div>
   </div>
 </div>
 
