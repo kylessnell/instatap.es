@@ -1,12 +1,15 @@
 # We will call this code like this:
-# TinySonger.search(params[:query])
-# in 'mixtape#create'
 
 require_relative '../config/api_keys_config.rb'
+# require 'youtube_it'
+# require 'rest_client'
+# require 'json'
+
 
 FACEBOOK_KEY = '482081311836995'
 FACEBOOK_SECRET = 'db541a0ee6682b9802cb44523c56babf'
 TINYSONG_API_KEY = "0af53736101aebb91f579527433c9208"
+ECHONEST_API_KEY = "UQMLHGHVTVSWYKWEW"
 YOUTUBE_API_KEY = "AI39si6i1YvfcT64qFK06lhB9oT_4NuGkRnSHmyrH7XmFkOx6jtLimBtDl-NOX7-RSqqcBKH-RpuJHae3Xo6ulUT8paIk9Nh1w"
 
 module TinySonger
@@ -16,12 +19,12 @@ module TinySonger
 
   def self.search_results(query)
     query = CGI::escape(query)
-    key = TINYSONG_API_KEY
-    JSON.parse(RestClient.get"http://tinysong.com/s/#{query}?format=json&key=#{key}")
+    key = ECHONEST_API_KEY
+    JSON.parse(RestClient.get"http://developer.echonest.com/api/v4/song/search?api_key=#{key}&artist=#{query}")
   end
 
   def self.all_songs(songs_data)
-    songs_data.collect { |song| Result.new(song) }
+    songs_data["response"]["songs"].collect { |song| Result.new(song) }
   end
 end
 
@@ -31,19 +34,15 @@ class Result
   end
 
   def tiny_id
-    @hash_data["SongID"]
+    @hash_data["id"]
   end
 
   def title
-    @hash_data["SongName"]
+    @hash_data["title"]
   end
 
   def artist
-    @hash_data["ArtistName"]
-  end
-
-  def album
-    @hash_data["AlbumName"]
+    @hash_data["artist_name"]
   end
 
   def youtube_id
@@ -63,3 +62,4 @@ class Result
     @youtube_client ||= YouTubeIt::Client.new(:dev_key => YOUTUBE_API_KEY)
   end
 end
+# puts TinySonger.all_songs(TinySonger.search_results("love"))[2].tiny_id
