@@ -2,35 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-div#band {
+#band {
   position: absolute;
   width: 100%;
-  background-color: rgba(20, 160, 226, 0.22);
   height: 50px;
+  padding-bottom: 30px;
 }
 
-div.padding {
+#header {
   height: 100px;
-}
-
-nav#header {
-  height: 50px;
-  background-color: rgba(20, 160, 226, 0.22);
+  margin-bottom: 70px;
+  padding-bottom:90px;
+  border-top: solid rgb(30, 30, 30) 8px;
+  border-bottom: solid rgb(220, 220, 220) 1px;
   ul {
     list-style-type:none;
     display: inline;
   }
-  li#header_logo {
-    float: left;
-  }
-  li#sign_in {
-    float: right;
-    display: inline;
-  }
 }
 
-div.play {
+#header_logo {
+  font-size: 50px;
+  font-weight: bold;
+  color:rgb(30, 30, 30);
+  float:left;
+}
+
+.start_a_new_mix {
+  font-weight: normal;
+  font-size: 14px;
+  float:right;
+}
+
+.play {
   h1 {
     text-align: center
   }
@@ -39,11 +43,38 @@ div.play {
   }
 }
 
-div.get_started {
+.get_started {
   h1 {
     text-align: center
   }
   a.get_started {
     width: 100%;
   }
+}
+
+#baseline {
+  padding-left: 50px;
+}
+
+#footer {
+  color:#aaa;
+  border-top: solid #aaa 1px;
+  padding-top: 15px;
+  margin-top: 100px;
+  margin-bottom: 70px;
+}
+
+#footer p {
+  line-height: 14px;
+  margin-bottom: 10px;
+}
+
+#footer a {
+  text-decoration: none;
+  color:rgb(100,100,100);
+}
+
+#footer a:hover{
+  text-decoration: none;
+  color:rgb(30,30,30);
 }
