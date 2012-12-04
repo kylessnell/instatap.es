@@ -14,12 +14,13 @@
 	margin-bottom: 50px;	
 }
 
-.design_title {
+.section_title {
 	margin-bottom: 20px;
 }
 
 #skins {
 	width:400px;
+	margin: 0 auto;
 }
 
 a.thumbnail {
@@ -33,6 +34,6 @@ a.thumbnail:nth-child(even) {
 img.thumbnail {
 	float:left;
   width: 45%;
-  padding: 0 40px 40px 0;
+  padding: 20px;
   border: 1px;
 }
