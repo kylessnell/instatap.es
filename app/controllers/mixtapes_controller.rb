@@ -1,12 +1,17 @@
 class MixtapesController < ApplicationController
   include SessionsHelper
-  
+
   def index
   end
 
   def new
     @song = Song.new
     @mixtape = Mixtape.new
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def create
