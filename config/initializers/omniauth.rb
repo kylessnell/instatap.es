@@ -1,5 +1,7 @@
-OmniAuth.config.logger = Rails.logger
+# require_relative '../api_keys_config.rb'
 
-Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']  # In production, make sure to add ENV[] to key and secret
-end
+# OmniAuth.config.logger = Rails.logger
+
+# Rails.application.config.middleware.use OmniAuth::Builder do
+#   provider :facebook, FACEBOOK_KEY, FACEBOOK_SECRET  # In production, make sure to add ENV[] to key and secret
+# end

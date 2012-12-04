@@ -1,0 +1,25 @@
+$(document).ready(function () {
+    $("#q").tokenInput("/searches/new.json", {
+        tokenLimit: 1,
+        onAdd: function(item){
+            var items=item.name.split(': ')
+            $("#tiny_id_field").val(item.id);
+            $('#artist_field').val(items[0]);
+            $('#title_field').val(items[1]);
+            $('#create_song_submit').trigger('click');
+            $('#q').tokenInput("remove", {id: item.id});
+        }
+    });
+
+    $(document).on( 'click', 'button.remove', function(event){
+        event.preventDefault();
+        $(this).parent().remove();
+    } );
+
+    $('#mixtape_track_list').sortable({
+        handle:"button",
+        axis:"y",
+        cancel:''
+    }).disableSelection();
+});
+

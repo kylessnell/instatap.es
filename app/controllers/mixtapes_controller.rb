@@ -1,25 +1,35 @@
 class MixtapesController < ApplicationController
+  include SessionsHelper
+  
   def index
   end
 
   def new
+    @song = Song.new
     @mixtape = Mixtape.new
-  end
-
-  def search
-    @results = TinySonger.search(params[:query])
-    @results.each { |r| puts r.title }
-    respond_to do |format|
-      format.js
-    end
   end
 
   def create
     @mixtape = Mixtape.create(params[:mixtape])
-    redirect_to mixtape_play_path(@mixtape.mixtape_url)
+    @mixtape.user_id = session[:user_id]
+    # redirect_to mixtape_play_path(@mixtape.url)
+    if @mixtape.save
+      session[:mixtape_id] = @mixtape.id
+      redirect_to new_design_path(:url => @mixtape.url)
+    else
+      render :new
+    end
   end
 
   def show
-    @mixtape = Mixtape.find_by_mixtape_url(params[:mixtape_url])
+    @mixtape = Mixtape.find_by_url(params[:url])
   end
+
+  def update
+    @mixtape = Mixtape.find(params[:id])
+    if @mixtape.update_attributes(params[:mixtape])
+      redirect_to mixtape_play_path(@mixtape.url)
+    end
+  end
+
 end

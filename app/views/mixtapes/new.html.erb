@@ -1,20 +1,2 @@
-<div id="search">
-  <%= form_tag mixtapes_search_path, :remote => true, :method => 'get' do |f| %>
-    <h2><%= label_tag "Search for an artist or a song" %></h2>
-    <%= text_field_tag 'query' %>
-    <%= button_tag 'Search' %>
-  <% end %>
-
-  <div id="search_results">
-  </div>
-
-</div>
-
-<div id="mixtape">
-  <h2>Your mixtape</h2>
-  <%= form_for @mixtape do |f| %>
-    <%= button_to 'Create', mixtapes_path %>
-  <% end %>
-</div>
-
-<%= link_to "Start Over", endsession_path, :class => "button start_over" %>
+<%= render "search" %>
+<%= render "new_mixtape" %>

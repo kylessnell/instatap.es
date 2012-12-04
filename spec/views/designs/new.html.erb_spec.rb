@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe MixtapeSong do
+describe "designs/new.html.erb" do
   pending "add some examples to (or delete) #{__FILE__}"
 end

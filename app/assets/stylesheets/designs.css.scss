@@ -1,0 +1,17 @@
+// Place all the styles related to the Designs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.thumbnail {
+  margin-right: 8%;
+}
+
+a.thumbnail:nth-child(even) {
+  margin: 0;
+}
+
+img.thumbnail {
+  width: 45%;
+  padding: 1px;
+  border: 1px;
+}

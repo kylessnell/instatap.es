@@ -1,2 +1,5 @@
-<%= hidden_field_tag "mixtape[song_ids][]", song.youtube_id %>
-<%= button_tag "#{song.artist} - #{song.title}", :class => "yt_button secondary button", :yt_id => song.youtube_id, :type => "button" %>
+<li>
+  <%= hidden_field_tag "mixtape[song_ids][]", song.id%>
+  <%= button_tag "#{song.artist} - #{song.title}", :class => "yt_button secondary button", :list_position => "", :yt_id => song.youtube_id, :type => "button" %>
+  <%= button_tag "x", :class => "remove" %>
+</li>
