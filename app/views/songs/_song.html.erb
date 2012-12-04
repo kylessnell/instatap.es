@@ -1,5 +1,12 @@
-<li>
-  <%= hidden_field_tag "mixtape[song_ids][]", song.id%>
-  <%= button_tag "#{song.artist} - #{song.title}", :class => "yt_button secondary button", :list_position => "", :yt_id => song.youtube_id, :type => "button" %>
+<tr class="track_list_item">
+  <td class = "not_playing_icon" style="visibility: hidden; float: left">
+    <%= image_tag 'play_icon.png', :width=> '20'%>
+  </td>
+  <td>
+  <%= hidden_field_tag "mixtape[song_ids][]", song.id %>
+  <%= button_tag "#{song.artist} - #{song.title}", :class => "yt_button", :list_position => "", :yt_id => song.youtube_id, :now_playing => "false", :type => "button" %>
+  </td>
+  <td>
   <%= button_tag "x", :class => "remove" %>
-</li>
+  </td>
+</tr>

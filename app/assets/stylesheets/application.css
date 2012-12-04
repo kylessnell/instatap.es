@@ -34,3 +34,16 @@
 #results_id {
 /*    line-height: 26px;*/
 }
+
+.yt_button {
+    background: transparent;
+    float: left;
+    color: black;
+    border: 0px;
+    font-size: 12pt;
+}
+
+.remove{
+    visibility: hidden;
+    float: left;
+}
