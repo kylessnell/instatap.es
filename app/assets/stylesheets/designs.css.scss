@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#design_picker {
+	padding-left:20px;
+}
+
+#name_picker {
+	margin-bottom: 40px;
+}
+
+#color_picker {
+	margin-bottom: 50px;	
+}
+
+.design_title {
+	margin-bottom: 20px;
+}
+
+#skins {
+	width:400px;
+}
+
 a.thumbnail {
   margin-right: 8%;
 }
@@ -11,7 +31,8 @@ a.thumbnail:nth-child(even) {
 }
 
 img.thumbnail {
+	float:left;
   width: 45%;
-  padding: 1px;
+  padding: 0 40px 40px 0;
   border: 1px;
 }
