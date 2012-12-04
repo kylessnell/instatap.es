@@ -15,6 +15,7 @@
  */
 
 
+
 #search {
 /*    height: 500px;
     min-width:00px;
@@ -46,4 +47,8 @@
 .remove{
     visibility: hidden;
     float: left;
+}
+
+#next_button {
+	margin-top:100px;
 }

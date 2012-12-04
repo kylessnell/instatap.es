@@ -9,18 +9,12 @@ class MixtapesController < ApplicationController
     @mixtape = Mixtape.new
   end
 
-  def search
-    query = params[:q]
-    @results = TinySonger.search(params[:q])
-    respond_to do |format|
-      format.json{ render :json => @results.collect{ |n| {:id => n.tiny_id, :name => "#{n.artist}: #{n.title}"}}.to_json }
-    end
-  end
-
   def create
     @mixtape = Mixtape.create(params[:mixtape])
-    # redirect_to mixtape_play_path(@mixtape.url)
+    @mixtape.user_id = session[:user_id]
+    
     if @mixtape.save
+      session[:mixtape_id] = @mixtape.id
       redirect_to new_design_path(:url => @mixtape.url)
     else
       render :new

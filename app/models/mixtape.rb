@@ -3,7 +3,10 @@ class Mixtape < ActiveRecord::Base
   belongs_to :user
   has_many :tracks
   has_many :songs, :through => :tracks
-  before_save :create_url
+  before_validation :create_url, :on => :create
+  validates_presence_of :url, :user_id
+  validates_uniqueness_of :url
+
 
   self.include_root_in_json = false
 

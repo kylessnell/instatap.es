@@ -1,0 +1,31 @@
+<div id="design_picker" class="five columns" >
+  <%= form_for @mixtape do |f| %>
+    <div id="name_picker" class="row">
+      <h3 class="section_title">Give your mixtape a name.</h3>
+      <%= f.text_field :name , :placeholder => "eg. Baltimore Classics, 70's Disco, etc", :class =>"" %>
+    </div>
+
+    <div id="skin_picker" class="row">
+      <h3 class="section_title">And pick a bad-ass skin.</h3>
+      <div id="skins" class="row">
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/black.png", :alt => "test image", :class => "color thumbnail", id: "black") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/clear.png", :alt => "test image", :class => "color thumbnail", id: "clear") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/green.png", :alt => "test image", :class => "color thumbnail", id: "green") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/grey.png", :alt => "test image", :class => "color thumbnail", id: "grey") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/red.png", :alt => "test image", :class => "color thumbnail", id: "red") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/yellow.png", :alt => "test image", :class => "color thumbnail", id: "yellow") %>
+        </div>
+    </div>
+
+    <div class="row">
+      <div id="mixtape_color">
+      </div>
+      <%= f.hidden_field :skin %>
+    </div>
+
+      <div id="next_button" class="four columns centered">
+        <%= button_to 'Next', mixtapes_path, :class => "button"%>
+      </div>
+
+  <% end %>
+</div>

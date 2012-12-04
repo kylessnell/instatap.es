@@ -1,3 +1,39 @@
 // Place all the styles related to the Designs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#design_picker {
+	padding-left:20px;
+}
+
+#name_picker {
+	margin-bottom: 40px;
+}
+
+#color_picker {
+	margin-bottom: 50px;	
+}
+
+.section_title {
+	margin-bottom: 20px;
+}
+
+#skins {
+	width:400px;
+	margin: 0 auto;
+}
+
+a.thumbnail {
+  margin-right: 8%;
+}
+
+a.thumbnail:nth-child(even) {
+  margin: 0;
+}
+
+img.thumbnail {
+	float:left;
+  width: 45%;
+  padding: 20px;
+  border: 1px;
+}

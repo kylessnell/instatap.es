@@ -1,13 +1,11 @@
 <div class="six columns play">
-  <%= image_tag("the_muxtape.png") %>
+  <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/default.png") %>
   <div id="mixtape">
-    <h2>Your mixtape</h2>
     <%= form_for @mixtape do |f| %>
-    <table id="mixtape_track_list">
-      <tbody>
-      </tbody>
-    </table>
-    <%= button_to 'Create', mixtapes_path %>
+      <table id="mixtape_track_list"></table>
+      <div id="next_button" class="three columns centered">
+        <%= button_to 'Next', mixtapes_path, :class => "button"%>
+      </div>
     <% end %>
   </div>
 </div>
