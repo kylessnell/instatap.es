@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background: #E6E6E6 url("http://sparrowmailapp.com/img/bg-noise.gif");
+}
+
 #band {
   position: absolute;
   width: 100%;
@@ -13,7 +17,7 @@
   height: 100px;
   margin-bottom: 70px;
   padding-bottom:90px;
-  border-top: solid rgb(30, 30, 30) 8px;
+  border-top: solid #39393C 8px;
   border-bottom: solid rgb(220, 220, 220) 1px;
   ul {
     list-style-type:none;
@@ -24,7 +28,7 @@
 #header_logo {
   font-size: 50px;
   font-weight: bold;
-  color:rgb(30, 30, 30);
+  color: #39393C;
   float:left;
 }
 
@@ -52,7 +56,8 @@
   }
 }
 
-#baseline {
+.baseline {
+  color:#39393C;
   padding-left: 50px;
 }
 
@@ -76,5 +81,5 @@
 
 #footer a:hover{
   text-decoration: none;
-  color:rgb(30,30,30);
+  color:#39393C;
 }
