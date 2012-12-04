@@ -1,4 +1,4 @@
-require_relative '../config/api_keys_config.rb'
+require_relative '../api_keys_config.rb'
 
 Mixtapes::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
