@@ -2,10 +2,6 @@ require 'spec_helper'
 
 describe Mixtape do 
 
-  it "is invalid without a name" do
-    build(:mixtape, name: nil).should_not be_valid
-  end
-
   it "is creates a url on create" do
     create(:mixtape).should be_valid
   end

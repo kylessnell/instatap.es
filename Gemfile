@@ -24,7 +24,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'guard'
+  gem 'guard-rspec'
+  gem 'growl_notify'
+  gem 'ruby_gntp'
   gem 'quiet_assets'
+  gem 'rb-fsevent', :require => false
 end
 
 group :assets do
