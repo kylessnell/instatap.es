@@ -10,29 +10,36 @@ var PageMover = {
       dataType: 'json',
       success: function(data) {
         $(element_id).html(data.html);
+        // $transitionUp.
       }
     });
 
     $(element_id).show();
   },
 
-  transitionUp: function(element_id) {
-    $('#band').css({'z-index': 1000});
+  transitionOutUp: function(element_id) {
+    var headerPosition = $('#header').css('position');
+    $('#header').css({position: 'relative'});
 
-    $(element_id).css({'z-index': 0})
-                 .animate({position: 'relative', top: '-1000px'}, 3000, function() {
-                   $(this).hide();
+    $(element_id).css({'z-index': 0, 'margin-bottom': '600px'})
+                 .animate({'margin-top': '-1000px'}, 3000, function() {
+                   $(this).css({visibility: 'hidden'});
+                   $('#header').css({position: headerPosition});
                  });
   },
 
-  eventBindings: function() {
+  transitionInUp: function(element_id) {
+    $(element_id).css({position: 'absolute', bottom: ''})
+    $(element_id).show();
+  },
 
+  eventBindings: function() {
     // When click "Create New Mix", show the "new mixtape" page
     $('#new_mix_button').on('click', function(event) {
       event.preventDefault();
-      var url = $(this).attr('href')
-
+      var url = $(this).attr('href');
       PageMover.showPage(url, '#new_mixtape');
+      PageMover.transitionOutUp( '#home');
     });
   }
 }

@@ -18,14 +18,10 @@
   <title>Mixtapes</title>
 </head>
   <body>
-    <div id="band"></div>
     <div class="row">
+      <%= render "layouts/header" %>
+
       <div class="twelve columns centered">
-        <%= render "layouts/header" %>
-        <div class=-"row">
-          <div class="twelve columns padding">
-          </div>
-        </div>
         <%= yield %>
       </div>
     </div>
