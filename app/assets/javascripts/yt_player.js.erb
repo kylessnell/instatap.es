@@ -62,7 +62,6 @@ $(document).on('ajax:complete', function(){
 
     $('.yt_button').click(function(){
         if ($(this).attr('now_playing') == 'false'){
-            $('#play_pause').html('Pause');
             var song_id = $(this).attr('yt_id');
             yt_player.loadVideoById(song_id, 1, 'large');
             $('.yt_button').each(function(){
@@ -72,14 +71,12 @@ $(document).on('ajax:complete', function(){
                     $(this).attr('now_playing', 'false');
                 }
             });
-
         }else if ($(this).attr('now_playing') == 'true'){
-            $('#play_pause').trigger('click');
+            yt_player.pauseVideo();
             $(this).attr('now_playing', 'paused');
-            alert("should pause");
         }else if ($(this).attr('now_playing') == 'paused'){
             $(this).attr('now_playing', 'true');
-            $('#play_pause').trigger('click');
+             yt_player.playVideo();
         };
         showOrHidePlayImage();
         return false;
