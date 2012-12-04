@@ -18,11 +18,12 @@ var PageMover = {
   },
 
   transitionOutUp: function(element_id) {
+    var windowHeight = $(window).height();
     var headerPosition = $('#header').css('position');
     $('#header').css({position: 'relative'});
 
-    $(element_id).css({'z-index': 0, 'margin-bottom': '600px'})
-                 .animate({'margin-top': '-1000px'}, 3000, function() {
+    $(element_id).css({'z-index': 0, 'margin-bottom': windowHeight * .5})
+                 .animate({'margin-top': "-" + windowHeight * 1.5}, 3000, function() {
                    $(this).css({visibility: 'hidden'});
                    $('#header').css({position: headerPosition});
                  });
