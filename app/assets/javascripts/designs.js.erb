@@ -4,8 +4,6 @@
 
 $(document).ready(function() {
   $('.color').on('click', function() {
-    $('#mixtape_color').html(this.id);
-    $('#mixtape_skin').val(this.id);
+    $('.seven img').attr('src', "https://dl.dropbox.com/u/6371005/Mixtapes/Assets/"+this.id+".png")
   });
 });
-

@@ -1,16 +1,20 @@
-<div class="five columns" >
+<div id="design_picker" class="five columns" >
   <%= form_for @mixtape do |f| %>
-    <div class="row">
-      <%= f.text_field :name , :placeholder => "Give a name to this mixtape", :class =>"" %>
+    <div id="name_picker" class="row">
+      <h3 class="section_title">Give your mixtape a name.</h3>
+      <%= f.text_field :name , :placeholder => "eg. Baltimore Classics, 70's Disco, etc", :class =>"" %>
     </div>
 
-    <div class="row">
-        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "red" %>
-        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "blue" %>
-        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "blue" %>
-        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "blue" %>
-        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "red" %>
-        <%= link_to image_tag("the_muxtape.png", :alt => "test image", :class => "thumbnail"), "#", :class => 'color thumbnail', id: "red" %>
+    <div id="skin_picker" class="row">
+      <h3 class="section_title">And pick a bad-ass skin.</h3>
+      <div id="skins" class="row">
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/black.png", :alt => "test image", :class => "color thumbnail", id: "black") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/clear.png", :alt => "test image", :class => "color thumbnail", id: "clear") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/green.png", :alt => "test image", :class => "color thumbnail", id: "green") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/grey.png", :alt => "test image", :class => "color thumbnail", id: "grey") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/red.png", :alt => "test image", :class => "color thumbnail", id: "red") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/yellow.png", :alt => "test image", :class => "color thumbnail", id: "yellow") %>
+        </div>
     </div>
 
     <div class="row">
@@ -19,9 +23,9 @@
       <%= f.hidden_field :skin %>
     </div>
 
-    <div class="four columns centered">
-      <%= f.submit 'Share', :class => "button" %>
-    </div>
+      <div id="next_button" class="four columns centered">
+        <%= button_to 'Next', mixtapes_path, :class => "button"%>
+      </div>
 
   <% end %>
 </div>

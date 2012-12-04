@@ -12,7 +12,7 @@ class MixtapesController < ApplicationController
   def create
     @mixtape = Mixtape.create(params[:mixtape])
     @mixtape.user_id = session[:user_id]
-    # redirect_to mixtape_play_path(@mixtape.url)
+    
     if @mixtape.save
       session[:mixtape_id] = @mixtape.id
       redirect_to new_design_path(:url => @mixtape.url)
