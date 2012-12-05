@@ -75,9 +75,13 @@
 #next_button {
 	margin-top:100px;
 }
+
+#youtube_player {
+  width: 40%;
+  margin: 70px auto 0 auto;
+}
+
 #ytplayer{
-    height: 600px;
-    width: 800px;
-    position: absolute;
-    left: -2000px;
+  height: 250px;
+  width: 350px;
 }
