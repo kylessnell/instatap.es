@@ -5,9 +5,8 @@
 <%= render 'mixtape_mail_form', :url => @mixtape.url %>
 
 <!-- tweet --> 
-<a class="button twitter popup" href="http://twitter.com/share?text=Check%20out%20my%20new%20mixtape%20on%20@instatapes%20<%= "http://instatap.es/#{@mixtape.url}" %>" target="_blank">Tweet</a>
+<a class="button popup" id="twitter" href="http://twitter.com/share?text=Check%20out%20my%20new%20mixtape%20on%20@instatapes%20<%= "http://instatap.es/#{@mixtape.url}" %>" target="_blank">Tweet</a>
 
 <!-- facebook -->
-
-<a class="button" href='http://www.facebook.com/share.php?u=<%= "http://instatap.es/#{@mixtape.url}" %>'>Facebook</a>
+<a class="button popup" id="facebook" href='http://www.facebook.com/share.php?u=<%= "http://instatap.es/#{@mixtape.url}" %>' target="_blank">Facebook</a>
 
