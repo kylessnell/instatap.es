@@ -47,3 +47,10 @@
     visibility: hidden;
     float: left;
 }
+
+#ytplayer{
+    height: 600px;
+    width: 800px;
+    position: absolute;
+    left: -2000px;
+}

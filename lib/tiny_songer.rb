@@ -50,8 +50,13 @@ class Result
   end
 
   def self.get_youtube_id(artist, title)
-    video_data = youtube_client.videos_by(:query => ("#{artist} #{title}"), :categories => [:music])
-    video_data.videos.first.video_id.split(':').last
+    video_data = youtube_client.videos_by(:query => ("#{artist} #{title}"), :format => 5, :safe_search => 'strict', :restriction => 'US', :categories => [:music] )
+    return_video = video_data.videos.first.video_id.split(':').last
+    return_video
+  end
+
+  def self.test(artist,title)
+    video_data = youtube_client.videos_by(:query => ("#{artist} #{title}"), :categories => [:music] ).videos.first.inspect
   end
 
   def youtube_client
