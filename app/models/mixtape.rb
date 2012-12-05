@@ -21,6 +21,7 @@ class Mixtape < ActiveRecord::Base
     songs.pluck(:id)
   end
 
+
 private
 
   def create_url

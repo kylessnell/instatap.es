@@ -30,6 +30,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rb-fsevent', :require => false
   gem 'simplecov', :require => false, :group => :test
+  gem 'debugger'
 end
 
 group :assets do
@@ -52,5 +53,3 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-gem 'debugger'

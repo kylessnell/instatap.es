@@ -1,49 +1,10 @@
 <div class="seven columns play">
   <div id="tape_container">
-    <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/default.png") %>
-    <div id="mixtape_name_on_tape"><div id="mixtape_name_live"></div></div>
+    <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/#{@mixtape.skin}.png") %>
+    <div id="mixtape_name_on_tape"><div id="mixtape_name_live"><%= @mixtape.name %></div></div>
     <div id="tracklist_container">
       <table>
-        <tr>
-          <td>1</td>
-          <td>Simon & Garfunkel</td>
-          <td>Bridge Over Troubled Water</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Simon & Garfunkel</td>
-          <td>Bridge Over Troubled Water</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Simon & Garfunkel</td>
-          <td>Bridge Over Troubled Water</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Simon & Garfunkel</td>
-          <td>Bridge Over Troubled Water</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Simon & Garfunkel</td>
-          <td>Bridge Over Troubled Water</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>Simon & Garfunkel</td>
-          <td>Bridge Over Troubled Water</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>Simon & Garfunkel</td>
-          <td>Bridge Over Troubled Water</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>Simon & Garfunkel</td>
-          <td>Bridge Over Troubled Water</td>
-        </tr>
+        <%= render :partial => "songs/song", :collection => @mixtape.songs, :as => :song %>
       </table>
     </div>
   </div>

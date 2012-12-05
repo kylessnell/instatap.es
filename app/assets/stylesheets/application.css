@@ -28,7 +28,10 @@
   left: 0px;
   z-index: 100px;
   font-weight: bold;
-  margin: 40px 0 0 50px;
+  margin: 40px 0 0 40px;
+  text-align:center;
+  font-size: 22px;
+  font-family:  "Comic Sans MS";
 }
 
 #mixtape_name_live{
