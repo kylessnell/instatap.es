@@ -7,7 +7,6 @@
           :placeholder => "eg. Baltimore Classics, 70's Disco, etc",
           :class => "mixtape_name",
           :maxlength => "25",
-          :name => "TextField",
           :onKeyUp => "TextCount();"
         %>
         <div class="countdown">25</div>
@@ -27,9 +26,7 @@
     </div>
 
     <div class="row">
-      <div id="mixtape_color">
-      </div>
-      <%= f.hidden_field :skin %>
+      <%= f.hidden_field :skin, :value => "clear" %>
     </div>
 
       <div id="next_button" class="four columns centered">
