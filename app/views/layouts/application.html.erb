@@ -2,30 +2,22 @@
 <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"><!-- <![endif] -->
 <head>
   <meta charset="utf-8" />
-  <!-- Uncomment to make IE8 render like IE7 -->
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script type="text/javascript" src = "http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-  <!-- Included CSS Files -->
   <%= stylesheet_link_tag    "application" %>
-  <!-- Included JS Files  -->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <title>Mixtapes</title>
+  <title>Instatap.es</title>
 </head>
   <body>
     <div id="band"></div>
     <div class="row">
       <div class="twelve columns centered">
         <%= render "layouts/header" %>
-  <!--         <div class=-"row">
-          <div class="twelve columns padding">
-          </div>
-        </div> -->
+        <div class=-"row"><div class="twelve columns padding"></div></div>
         <%= yield %>
       </div>
     </div>
