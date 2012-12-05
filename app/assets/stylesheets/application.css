@@ -14,7 +14,27 @@
  *= require_tree .
  */
 
+#tape_container {
+  width: 400px;
+  height: 500px;
+  position: relative;
+}
 
+#mixtape_name_on_tape {
+  width: 310px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100px;
+  font-weight: bold;
+  margin: 40px 0 0 50px;
+}
+
+#mixtape_name_live{
+  font-size: 22px;
+  font-family:  "Comic Sans MS";
+}
 
 #search {
 /*    height: 500px;
