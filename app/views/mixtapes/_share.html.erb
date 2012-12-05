@@ -1,35 +1,13 @@
 <!-- SOCIAL PLUGINS -->
-<a href="#" class="tiny button" data-reveal-id="mail_form">Email your mixtape!</a>
+
+<!-- email -->
+<a href="#" class="button" data-reveal-id="mail_form">Email your mixtape!</a>
 <%= render 'mixtape_mail_form', :url => @mixtape.url %>
-<a href="https://twitter.com/share" class="twitter-share-button" data-text="Check out my new mixtape on @mixtape" data-size="large">Tweet</a>
 
+<!-- tweet --> 
+<a class="button twitter popup" href="http://twitter.com/share?text=Check%20out%20my%20new%20mixtape%20on%20@instatapes%20<%= "http://instatap.es/#{@mixtape.url}" %>" target="_blank">Tweet</a>
 
-<div class="fb-send" data-href=<%= @mixtape.url %> data-font="lucida grande"></div>
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    // init the FB JS SDK
-    FB.init({
-      appId      : '482081311836995', // App ID from the App Dashboard
-      channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File for x-domain communication
-      status     : true, // check the login status upon init?
-      cookie     : true, // set sessions cookies to allow your server to access the session?
-      xfbml      : true  // parse XFBML tags on this page?
-    });
+<!-- facebook -->
 
-    // Additional initialization code such as adding Event Listeners goes here
+<a class="button" href='http://www.facebook.com/share.php?u=<%= "http://instatap.es/#{@mixtape.url}" %>'>Facebook</a>
 
-  };
-
-  // Load the SDK's source Asynchronously
-  // Note that the debug version is being actively developed and might 
-  // contain some type checks that are overly strict. 
-  // Please report such bugs using the bugs tool.
-  (function(d, debug){
-     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement('script'); js.id = id; js.async = true;
-     js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
-     ref.parentNode.insertBefore(js, ref);
-   }(document, /*debug*/ false));
-</script>
