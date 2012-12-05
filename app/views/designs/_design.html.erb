@@ -16,8 +16,8 @@
     <div id="skin_picker" class="row">
       <h3 class="section_title">And pick a bad-ass skin.</h3>
       <div id="skins" class="row">
-        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/black.png", :alt => "test image", :class => "color thumbnail", id: "black") %>
         <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/clear.png", :alt => "test image", :class => "color thumbnail", id: "clear") %>
+        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/black.png", :alt => "test image", :class => "color thumbnail", id: "black") %>
         <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/green.png", :alt => "test image", :class => "color thumbnail", id: "green") %>
         <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/grey.png", :alt => "test image", :class => "color thumbnail", id: "grey") %>
         <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/red.png", :alt => "test image", :class => "color thumbnail", id: "red") %>
@@ -37,5 +37,17 @@
 </div>
 
 <script language="javascript" type="text/javascript">
-
+  function TextCount() {
+    $('.countdown')[0].innerHTML = 25 - $('#mixtape_name')[0].value.length;
+    if ($('.countdown')[0].innerHTML === "0") {
+      $('.countdown')[0].style.color = "red";
+      $('.countdown')[0].style.fontWeight = "bold";
+    } else if (parseInt($('.countdown')[0].innerHTML) <= 5) {
+      $('.countdown')[0].style.color = "red";
+      $('.countdown')[0].style.fontWeight = "normal";
+    } else {
+      $('.countdown')[0].style.color = "rgb(150,150,150)";
+      $('.countdown')[0].style.fontWeight = "normal";
+    }
+  }
 </script>
