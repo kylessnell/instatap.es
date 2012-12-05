@@ -12,6 +12,7 @@ class SongsController < ApplicationController
     @song = Song.new(params[:song])
     @song.youtube_id = Result.get_youtube_id(@song.artist, @song.title)
     @song.save
+    puts Result.test(@song.artist, @song.title)
     respond_to do |format|
       format.js
     end
