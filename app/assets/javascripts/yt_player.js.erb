@@ -30,7 +30,7 @@ $(document).on('ajax:complete', function(){
             $(this).find('.remove').css('visibility', 'visible');
             $(this).find('td').css('visibility', 'visible');
             $(this).find('.now_playing_icon').find('img').attr('src', '/assets/pause_icon.png');
-            $(this).find('.now_playing_paused_icon').find('img').attr('src', '/assets/play_icon.png');
+            $(this).find('.not_playing_icon, .now_playing_paused_icon').find('img').attr('src', '/assets/play_icon.png');
         },
         function(){
             $(this).find('.remove').css('visibility', 'hidden');
@@ -53,6 +53,12 @@ $(document).on('ajax:complete', function(){
                 var row = $(this).parent().parent()
                 row.find('.not_playing_icon').attr('class', 'now_playing_paused_icon').css('visibility', 'visible');
                 row.find('.now_playing_icon img').attr('src', '/assets/play_icon.png');
+            }else{
+                var row = $(this).parent().parent()
+                row.find('.not_playing_icon, .now_playing_paused_icon').css('visibility', 'hidden').attr({
+                    'class': 'not_playing_icon',
+                    'src': '/assets/play_icon.png'
+                });
             }
         });
     };
@@ -75,7 +81,7 @@ $(document).on('ajax:complete', function(){
             $(this).attr('now_playing', 'paused');
         }else if ($(this).attr('now_playing') == 'paused'){
             ytplayer.playVideo();
-             $(this).attr('now_playing', 'true');
+            $(this).attr('now_playing', 'true');
         };
         showOrHidePlayImage();
     });
