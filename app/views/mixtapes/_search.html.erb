@@ -13,10 +13,11 @@
       <%= f.submit "submit", :id => "create_song_submit", :style => 'visibility: hidden' %>
     <% end %>
 
-    <div id="search_results"> </div>
-
-    <div id="yt_player"> </div>
-
+    <div id="search_results">
+    </div>
+    <object id="ytplayer_div" style="position: absolute; left: -1000px;">
+    </object>
+    <button class="button" id="play_pause" type="button">Play</button>
+    <%= link_to "Start Over", endsession_path, :class => "button start_over" %>
   </div>
-<!-- <div ></div> -->
 </div>

@@ -1,8 +1,12 @@
 function onYouTubePlayerReady(player_id){
-    yt_player = document.getElementById('my_yt_player');
-    yt_player.addEventListener("onStateChange", "nextSong");
+    ytplayer = document.getElementById('ytplayer');
+    ytplayer.addEventListener("onStateChange", "nextSong");
+    ytplayer.addEventListener("onError", "errorFunction");
 }
 
+function errorFunction(data){
+    alert(data);
+};
 
 function nextSong(newState){
     if (newState == 0){
@@ -17,21 +21,16 @@ function nextSong(newState){
 $(document).on('ajax:complete', function(){
 
     var params = { allowScriptAccess: "always" };
-    var atts = {id: "my_yt_player"};
-    swfobject.embedSWF("http://www.youtube.com/apiplayer?enablejsapi=1", "yt_player", "0", "0", "8",null, null, params, atts);
-    $('#my_yt_player').css('position', 'absolute');
-
-
-    function currentSong(song_id){
-        return song_id;
-    };
+    var atts = {id: "ytplayer"};
+    swfobject.embedSWF("http://www.youtube.com/v/jPr4JIG_kak?enablejsapi=1&version=3&playerapiid=ytplayer",
+                        "ytplayer_div", "500", "500", "9", null, null, params, atts);
 
     $('.track_list_item').hover(
         function(){
             $(this).find('.remove').css('visibility', 'visible');
             $(this).find('td').css('visibility', 'visible');
             $(this).find('.now_playing_icon').find('img').attr('src', '/assets/pause_icon.png');
-            $(this).find('.now_playing_paused_icon').find('img').attr('src', '/assets/play_icon.png');
+            $(this).find('.not_playing_icon, .now_playing_paused_icon').find('img').attr('src', '/assets/play_icon.png');
         },
         function(){
             $(this).find('.remove').css('visibility', 'hidden');
@@ -54,6 +53,12 @@ $(document).on('ajax:complete', function(){
                 var row = $(this).parent().parent()
                 row.find('.not_playing_icon').attr('class', 'now_playing_paused_icon').css('visibility', 'visible');
                 row.find('.now_playing_icon img').attr('src', '/assets/play_icon.png');
+            }else{
+                var row = $(this).parent().parent()
+                row.find('.not_playing_icon, .now_playing_paused_icon').css('visibility', 'hidden').attr({
+                    'class': 'not_playing_icon',
+                    'src': '/assets/play_icon.png'
+                });
             }
         });
     };
@@ -63,7 +68,7 @@ $(document).on('ajax:complete', function(){
     $('.yt_button').click(function(){
         if ($(this).attr('now_playing') == 'false'){
             var song_id = $(this).attr('yt_id');
-            yt_player.loadVideoById(song_id, 1, 'large');
+            ytplayer.loadVideoById(song_id, 1, 'large');
             $('.yt_button').each(function(){
                 if (song_id == $(this).attr('yt_id')){
                     $(this).attr('now_playing', 'true');
@@ -72,27 +77,17 @@ $(document).on('ajax:complete', function(){
                 }
             });
         }else if ($(this).attr('now_playing') == 'true'){
-            yt_player.pauseVideo();
+            ytplayer.pauseVideo();
             $(this).attr('now_playing', 'paused');
         }else if ($(this).attr('now_playing') == 'paused'){
+            ytplayer.playVideo();
             $(this).attr('now_playing', 'true');
-             yt_player.playVideo();
         };
         showOrHidePlayImage();
-        return false;
-    });
-
-
-    $('#play_pause').toggle(function(){
-            yt_player.pauseVideo();
-            $(this).html('Play');
-        }, function(){
-            yt_player.playVideo();
-            $(this).html('Pause');
     });
 
     $('.start_over').click(function(){
-        yt_player.pauseVideo();
+        ytplayer.pauseVideo();
     });
 
 
