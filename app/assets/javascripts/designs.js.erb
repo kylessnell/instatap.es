@@ -5,6 +5,7 @@
 $(document).ready(function() {
   $('.designs .color').on('click', function() {
     $('.seven img').attr('src', "https://dl.dropbox.com/u/6371005/Mixtapes/Assets/"+this.id+".png")
+    $('#mixtape_skin')[0].value = this.id;
   }); 
 
   function TextCount() {

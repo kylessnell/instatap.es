@@ -1,9 +1,6 @@
 <div class="ten columns centered share">
 <h4><%= link_to "http://instatap.es/#{@mixtape.url}", "http://instatap.es/#{@mixtape.url}" %></h4>
 <%= render 'mixtapes/share' if current_user && owner(@mixtape.url) %>
-<h3><%= @mixtape.name %></h3>
-
-
   <div class="row">
     <div class="one columns"></div>
       <div class="ten columns">

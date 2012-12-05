@@ -1,7 +1,7 @@
 <div class="seven columns play">
   <div id="tape_container">
     <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/#{@mixtape.skin}.png") %>
-    <div id="mixtape_name_on_tape"><div id="mixtape_name_live"></div></div>
+    <div id="mixtape_name_on_tape"><div id="mixtape_name_live"><%= @mixtape.name %></div></div>
     <div id="tracklist_container">
       <table>
         <%= render :partial => "songs/song", :collection => @mixtape.songs, :as => :song %>
