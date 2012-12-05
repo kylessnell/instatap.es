@@ -1,5 +1,6 @@
-//Twitter
 $(document).ready(function() {
+   
+  // Twitter Popup
   $('.popup').click(function(event) {
     var width  = 575,
         height = 400,
@@ -11,18 +12,29 @@ $(document).ready(function() {
                  ',height=' + height +
                  ',top='    + top    +
                  ',left='   + left;
-    
+                  
     window.open(url, 'twitter', opts);
+    return false;
+  });
+
+  // Facebook Popup
+  $('.facebook').click(function(event) {
+    var width  = 575,
+        height = 400,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+    window.open(url, 'Facebook', opts);
     return false;
   });
 });
 
-//Facebook
 
-// (function(d, s, id) {
-//   var js, fjs = d.getElementsByTagName(s)[0];
-//   if (d.getElementById(id)) return;
-//   js = d.createElement(s); js.id = id;
-//   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-//   fjs.parentNode.insertBefore(js, fjs);
-// }(document, 'script', 'facebook-jssdk'));
+
+
