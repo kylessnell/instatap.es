@@ -265,6 +265,10 @@
         1,
         null,
         1,
+<<<<<<< Updated upstream
+=======
+        null,
+>>>>>>> Stashed changes
         0,
         0,
         0,
@@ -387,6 +391,7 @@
         null,
         1,
         0,
+        null,
         null,
         null,
         1,
@@ -535,6 +540,7 @@
         1,
         1,
         1,
+<<<<<<< Updated upstream
         1,
         1,
         null,
@@ -596,6 +602,44 @@
       "/Users/apprentice/Desktop/mixtapes/spec/factories/users.rb": [
         null,
         null,
+=======
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/mixtapes/app/models/track.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/mixtapes/spec/factories/mixtapes.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/mixtapes/spec/factories/song.rb": [
+>>>>>>> Stashed changes
         1,
         1,
         1,
@@ -604,6 +648,46 @@
         1,
         1,
         null,
+<<<<<<< Updated upstream
+        null
+      ],
+      "/Users/apprentice/Desktop/mixtapes/config/routes.rb": [
+        1,
+=======
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/mixtapes/spec/factories/tracks.rb": [
+>>>>>>> Stashed changes
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+<<<<<<< Updated upstream
+=======
+        null,
+        null,
+        null
+      ],
+      "/Users/apprentice/Desktop/mixtapes/spec/factories/users.rb": [
+        null,
+        null,
+        1,
+        1,
+>>>>>>> Stashed changes
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+<<<<<<< Updated upstream
+        null,
+        1,
+=======
         null
       ],
       "/Users/apprentice/Desktop/mixtapes/config/routes.rb": [
@@ -613,27 +697,24 @@
         null,
         1,
         1,
+>>>>>>> Stashed changes
         1,
         1,
         1,
         1,
         1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
+<<<<<<< Updated upstream
         null
       ],
       "/Users/apprentice/Desktop/mixtapes/spec/controllers/static_pages_controller_spec.rb": [
+=======
+        1,
         1,
         null,
+>>>>>>> Stashed changes
         1,
+        1,
+<<<<<<< Updated upstream
         null,
         1,
         1,
@@ -646,5 +727,15 @@
       ]
     },
     "timestamp": 1354682546
+=======
+        1,
+        1,
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1354671252
+>>>>>>> Stashed changes
   }
 }

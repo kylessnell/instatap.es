@@ -1,6 +1,7 @@
 module SessionsHelper
 
   def current_user
+    # switch puts to Rails.logger.info "str"
     puts "*" * 100
     puts "Checking for a current user..."
     if session[:user_id] 

@@ -49,5 +49,9 @@ class Result
   def self.youtube_client
     @youtube_client ||= YouTubeIt::Client.new(:dev_key => YOUTUBE_API_KEY)
   end
+
+  def as_json(opts={})
+    {:id => self.tiny_id, :name => "#{self.artist}: #{self.title}" }
+  end
 end
 # puts TinySonger.all_songs(TinySonger.search_results("love"))[2].tiny_id

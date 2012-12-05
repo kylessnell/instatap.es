@@ -11,18 +11,20 @@ $(document).ready(function () {
         }
     });
 	
-	// Return a helper with preserved width of cells
-	var fixHelper = function(e, ui) {
-		ui.children().each(function() {
-			$(this).width($(this).width());
-		});
-		return ui;
-	};
 
     $(document).on( 'click', 'button.remove', function(event){
         event.preventDefault();
+        // this is brittle bc JS has to know about DOM structure.  try to make this more flexible.
         $(this).parent().parent().remove();
     });
+
+    // Return a helper with preserved width of cells
+    var fixHelper = function(e, ui) {
+        ui.children().each(function() {
+            $(this).width($(this).width());
+        });
+        return ui;
+    };
 
     $('#mixtape_track_list tbody').sortable({
         handle:"button",
