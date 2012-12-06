@@ -3,37 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #pick_a_name {
-/*	width: 370px;
-  height: 50px;
-  position: relative;*/
 }
 
 .countdown {
-/*	width: 10%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-	text-align: right;
-	margin-left: 330px;
-	padding: 9px 7px 0 0;
-	color: rgb(150,150,150);
-
-
-*/
   margin-top: -34px;
-margin-left: 89%;
-position: absolute;
-color: #969696;
-
+  margin-left: 90%;
+  position: absolute;
+  color: #969696;
 }
 
 #design_picker {
 /*	padding-left:20px;*/
+position: relative;
 }
 
 #name_picker {
-/*	margin-bottom: 40px;*/
+  margin-bottom: 20px;
 }
 
 #color_picker {
@@ -42,6 +27,7 @@ color: #969696;
 
 .section_title {
 /*	margin-bottom: 20px;*/
+  font-weight: bold;
 }
 
 #skins {
@@ -49,18 +35,21 @@ color: #969696;
 	margin-top: 4%;
 }
 
-
-
 img.thumbnail:nth-child(odd) {
-margin-right: 5%;
+  margin-right: 5%;
 }
 
 img.thumbnail {
-   width: 45%;
+  width: 150px;
   float:left;
 }
 
 img.thumbnail {
-
   margin-bottom: 5%;
+}
+
+.share_your_tape {
+  position: absolute;
+  top: 0;
+  z-index: 1000px;
 }
