@@ -1,12 +1,7 @@
 <div class="ten columns centered share">
-<h4><%= link_to "http://instatap.es/#{@mixtape.url}", "http://instatap.es/#{@mixtape.url}" %></h4>
-<%= render 'mixtapes/share' if current_user && owner(@mixtape.url) %>
-  <div class="row">
-    <div class="one columns"></div>
-      <div class="ten columns">
-        <%= render 'layouts/play' %>
-        <!-- seven columns centered -->
-      </div>
-    <div class="one columns"></div>
+  <h3 id="mixtape_url"><%= link_to "http://instatap.es/#{@mixtape.url}", "http://instatap.es/#{@mixtape.url}" %></h3>
+  <%= render 'mixtapes/share' if current_user && owner(@mixtape.url) %>
+  <div id="show_tape" class="seven columns centered">
+    <%= render 'layouts/play' %>
   </div>
 </div>
