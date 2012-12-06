@@ -1,4 +1,7 @@
 class SongsController < ApplicationController
+  include SessionsHelper
+  helper_method :current_user
+  before_filter :authorize_user, :only => :create
   def show
     @artist = params[:artist]
     @title = params[:title]
@@ -12,7 +15,6 @@ class SongsController < ApplicationController
     @song = Song.new(params[:song])
     @song.youtube_id = Result.get_youtube_id(@song.artist, @song.title)
     @song.save
-    puts Result.test(@song.artist, @song.title)
     respond_to do |format|
       format.js
     end

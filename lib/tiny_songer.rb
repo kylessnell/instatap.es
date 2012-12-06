@@ -59,4 +59,3 @@ class Result
     {:id => self.tiny_id, :name => "#{self.artist}: #{self.title}" }
   end
 end
-# puts TinySonger.all_songs(TinySonger.search_results("love"))[2].tiny_id

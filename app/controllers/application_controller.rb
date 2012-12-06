@@ -4,7 +4,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize_user
-    #redirect_to root_url if current_user.nil?
+    Rails.logger.info "Checki"
+    if (current_user && current_user.id != session[:user_id]) || current_user.nil?
+      redirect_to root_url 
+    end
   end
 
 private

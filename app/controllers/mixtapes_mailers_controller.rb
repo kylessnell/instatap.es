@@ -1,4 +1,7 @@
 class MixtapesMailersController < ApplicationController
+  include SessionsHelper
+  helper_method :current_user
+  before_filter :authorize_user
 
   def create
     @recipient_name = params[:recipient_name]

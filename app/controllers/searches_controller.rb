@@ -1,4 +1,8 @@
 class SearchesController < ApplicationController
+  include SessionsHelper
+  helper_method :current_user
+  before_filter :authorize_user
+
   def new
     query = params[:q]
     @results = TinySonger.search(params[:q])
