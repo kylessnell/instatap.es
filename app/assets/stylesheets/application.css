@@ -109,3 +109,8 @@ input.start_a_new_mix {
   float: right;
   margin: 0;
 }
+
+.social_logo {
+  height: 15px;
+  margin-right: 11px;
+}
