@@ -4,7 +4,7 @@
   </td>
   <td>
   <%= hidden_field_tag "mixtape[song_ids][]", song.id %>
-  <%= button_tag "#{song.artist} - #{song.title}", :class => "yt_button", :list_position => "", :yt_id => song.youtube_id, :now_playing => "false", :type => "button" %>
+  <%= button_tag "#{song.artist} #{song.title}", :class => "yt_button", :list_position => "", :yt_id => song.youtube_id, :now_playing => "false", :type => "button" %>
   </td>
   <td>
   <%= button_tag "x", :class => "remove" %>
