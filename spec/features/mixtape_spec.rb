@@ -7,8 +7,8 @@ describe "Mixtapes" do
     it "creates and saves a new mixtape" do
       visit root_path
       expect{
-      click_on 'Create New Mix'
-      click_button 'Next'
+      click_on 'Create a New Tape'
+      click_button 'Design your Tape'
       }.to change(Mixtape, :count).by(1)
     end
 
