@@ -34,6 +34,9 @@ input.start_a_new_mix {
   position: relative;
 }
 
+.mixtape_name {
+} 
+
 #mixtape_name_on_tape {
   width: 350px;
   height: 40px;
@@ -50,7 +53,7 @@ input.start_a_new_mix {
 }
 
 #mixtape_name_live{
-  font-size: 20px;
+  font-size: 17px;
   font-family: 'Rock Salt', cursive;
 }
 
