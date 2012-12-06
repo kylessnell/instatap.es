@@ -30,5 +30,4 @@ class MixtapesMailersController < ApplicationController
     MixtapesMailer.mixtape_delivery(@recipient_email, @author_name).deliver
     redirect_to mixtape_play_path(@mixtape.url)
   end
-
 end
