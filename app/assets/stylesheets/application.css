@@ -25,6 +25,10 @@ li#header_logo {
   font-weight: 300;
 }
 
+input.start_a_new_mix {
+  margin-top: 13px;
+}
+
 #tape_container {
   width: 430px;
   position: relative;
@@ -54,6 +58,11 @@ li#header_logo {
     float: left;
     color: black;
     border: 0px;
+}
+
+.token-input-dropdown {
+  font-weight: 200;
+  font-style: 'Lato', sans-serif;
 }
 
 .remove {
