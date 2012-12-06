@@ -3,9 +3,9 @@
 	  <div class="nine columns">
 			<div id="page_header_title">Pick some Songs</div>
 	  </div>
-	  <div class="three columns">
+	  <div class="four columns">
     	<div id="page_header_button">
-	    	<%= button_to 'Design your Tape', mixtapes_path, :class => "button large radius design_your_tape" %>
+        <%= link_to image_tag('next_arrow.png', :class => 'next_arrow_as_button') + "Design your mixtape", mixtapes_path, :class => "button large radius design_your_tape", :method => :post %>
 	    </div>
 	  </div>
 	</div>
@@ -16,7 +16,7 @@
   	</div>
   	<div class="three columns">
     	<div id="page_header_button">
-    		<%= button_to 'Share your Tape', mixtapes_path, :class => "button large radius share_your_tape" %>
+        <%= link_to image_tag('next_arrow.png', :class => 'next_arrow_as_button') + "Share your tape", mixtapes_path, :class => "button large radius share_your_tape"%>
     	</div>
   	</div>
 	</div>

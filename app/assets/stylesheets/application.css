@@ -118,3 +118,25 @@ input.start_a_new_mix {
   height: 15px;
   margin-right: 11px;
 }
+
+.next_arrow {
+  height: 18px;
+float: right;
+margin-right: 10%;
+}
+
+.next_arrow_as_button {
+  height: 20px;
+  float: right;
+  margin-right: -1%;
+}
+
+a.design_your_tape {
+  font-weight: 600;
+  width: 110%;
+}
+
+a.share_your_tape {
+  font-weight: 600;
+  width: 110%;
+}
