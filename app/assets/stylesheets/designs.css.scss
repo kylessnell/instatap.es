@@ -18,7 +18,7 @@ position: relative;
 }
 
 #name_picker {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 #color_picker {
@@ -26,17 +26,16 @@ position: relative;
 }
 
 .section_title {
-/*	margin-bottom: 20px;*/
-  font-weight: bold;
+  margin-top: 0;
 }
 
 #skins {
   margin-left: 4%;
-	margin-top: 4%;
+	margin-top: 8%;
 }
 
 img.thumbnail:nth-child(odd) {
-  margin-right: 5%;
+  margin-right: 8%;
 }
 
 img.thumbnail {
@@ -45,11 +44,5 @@ img.thumbnail {
 }
 
 img.thumbnail {
-  margin-bottom: 5%;
-}
-
-.share_your_tape {
-  position: absolute;
-  top: 0;
-  z-index: 1000px;
+  margin-bottom: 8%;
 }
