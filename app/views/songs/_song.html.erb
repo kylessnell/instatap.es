@@ -3,10 +3,12 @@
     <%= image_tag 'play_icon.png', :width=> '15px'%>
   </td>
   <td>
-  <%= hidden_field_tag "mixtape[song_ids][]", song.id %>
-  <%= button_tag "#{song.artist} #{song.title}", :class => "yt_button", :list_position => "", :yt_id => song.youtube_id, :now_playing => "false", :type => "button" %>
+    <%= hidden_field_tag "mixtape[song_ids][]", song.id %>
+    <%= button_tag "#{song.artist} #{song.title}", :class => "yt_button", :list_position => "", :yt_id => song.youtube_id, :now_playing => "false", :type => "button" %>
   </td>
   <td>
-  <%= button_tag "x", :class => "remove" %>
+    <% if controller_name == 'mixtapes' && controller.action_name == 'new' %>
+      <%= button_tag "x", :class => "remove" %>
+    <% end %>
   </td>
 </tr>
