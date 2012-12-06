@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'thin'
 gem 'mail'
 gem 'rest-client'
+gem 'pony'
 
 group :test do
   gem 'database_cleaner'
