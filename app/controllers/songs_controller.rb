@@ -12,9 +12,8 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(params[:song])
-    @song.youtube_id = Result.get_youtube_id(@song.artist, @song.title)
-    @song.save
+    @song = Song.where(params[:song]).first_or_create
+    @song.update_attributes(:youtube_id => Result.get_youtube_id(@song.artist, @song.title))
     respond_to do |format|
       format.js
     end

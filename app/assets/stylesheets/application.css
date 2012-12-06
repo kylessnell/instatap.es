@@ -55,11 +55,19 @@ li#header_logo {
     float: left;
     color: black;
     border: 0px;
+    font-size: 12pt;
+    position: relative;
+    left: -54px;
+    padding-left: 54px;
 }
 
 .remove {
     visibility: hidden;
     float: left;
+}
+
+#next_button {
+    margin-top:100px;
 }
 
 .new_song {
