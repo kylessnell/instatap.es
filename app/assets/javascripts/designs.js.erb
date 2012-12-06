@@ -3,10 +3,15 @@
 // You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready(function() {
-  $('.designs .color').on('click', function() {
-    $('.seven img').attr('src', "/assets/"+this.id+".png")
+  $('.color').on('click', function() {
+    $('#tape_skin img').attr('src', "/assets/"+this.id+".png")
     $('#mixtape_skin')[0].value = this.id;
-  }); 
+  });
+
+  $('.share_your_tape').on('click', function(e) {
+  	e.preventDefault();
+    $('#next_design').click();
+  })
 
 });
 

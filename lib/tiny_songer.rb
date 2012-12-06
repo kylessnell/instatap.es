@@ -67,4 +67,6 @@ class Result
   def as_json(opts={})
     {:id => self.tiny_id, :name => "#{self.artist} #{self.title}" }
   end
+
 end
+

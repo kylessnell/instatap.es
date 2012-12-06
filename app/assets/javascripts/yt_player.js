@@ -18,7 +18,7 @@ function nextSong(newState){
     }
 };
 
-$(document).on('ajax:complete', function(){
+$(document).on('ajax:complete ready', function(){
 
     var params = { allowScriptAccess: "always" };
     var atts = {id: "ytplayer"};
@@ -98,4 +98,5 @@ $(document).on('ajax:complete', function(){
 
 
 });
+
 

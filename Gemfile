@@ -16,7 +16,6 @@ gem 'mail'
 gem 'rest-client'
 
 group :test do
-  gem 'capybara'
   gem 'database_cleaner'
 end
 
@@ -31,6 +30,8 @@ group :development, :test do
   gem 'rb-fsevent', :require => false
   gem 'simplecov', :require => false, :group => :test
   gem 'debugger'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :assets do

@@ -3,55 +3,46 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #pick_a_name {
-	width: 370px;
-  height: 50px;
-  position: relative;
 }
 
 .countdown {
-	width: 10%;
-  height: 100%;
+  margin-top: -34px;
+  margin-left: 90%;
   position: absolute;
-  top: 0px;
-  left: 0px;
-	text-align: right;
-	margin-left: 330px;
-	padding: 9px 7px 0 0;
-	color: rgb(150,150,150)
+  color: #969696;
 }
 
 #design_picker {
-	padding-left:20px;
+/*	padding-left:20px;*/
+position: relative;
 }
 
 #name_picker {
-	margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 #color_picker {
-	margin-bottom: 50px;	
+/*	margin-bottom: 50px;	*/
 }
 
 .section_title {
-	margin-bottom: 20px;
+  margin-top: 0;
 }
 
 #skins {
-	width:400px;
-	margin: 0 auto;
+  margin-left: 4%;
+	margin-top: 8%;
 }
 
-a.thumbnail {
+img.thumbnail:nth-child(odd) {
   margin-right: 8%;
 }
 
-a.thumbnail:nth-child(even) {
-  margin: 0;
+img.thumbnail {
+  width: 150px;
+  float:left;
 }
 
 img.thumbnail {
-	float:left;
-  width: 45%;
-  padding: 20px;
-  border: 1px;
+  margin-bottom: 8%;
 }

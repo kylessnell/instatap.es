@@ -1,4 +1,7 @@
 class SongsController < ApplicationController
+  include SessionsHelper
+  helper_method :current_user
+  before_filter :authorize_user, :only => :create
   def show
     @artist = params[:artist]
     @title = params[:title]
