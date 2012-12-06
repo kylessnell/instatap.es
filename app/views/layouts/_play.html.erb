@@ -1,10 +1,12 @@
-<div class="seven columns play" id="play_partial">
+<div class="six columns play" id="play_partial">
   <div id="tape_container">
-    <% if @mixtape %>
-      <%= image_tag("#{@mixtape.skin}.png") %>
-    <% else %>
-      <%= image_tag(asset_path "clear.png") %>
-    <% end %>
+    <div id="tape_skin">
+      <% if @mixtape %>
+        <%= image_tag("#{@mixtape.skin}.png") %>
+      <% else %>
+        <%= image_tag(asset_path "clear.png") %>
+      <% end %>
+    </div>
     <div id="mixtape_name_on_tape">
       <div id="mixtape_name_live">
         <% if @mixtape %>

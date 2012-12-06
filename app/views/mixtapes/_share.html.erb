@@ -1,12 +1,12 @@
 <!-- SOCIAL PLUGINS -->
 
 <!-- email -->
-<a href="#" class="button" data-reveal-id="mail_form">Email your mixtape!</a>
+<a href="#" class="button large radius share" data-reveal-id="mail_form">Email</a>
 <%= render 'mixtape_mail_form', :url => @mixtape.url %>
 
 <!-- tweet --> 
-<a class="button popup" id="twitter" href="http://twitter.com/share?text=Check%20out%20my%20new%20mixtape%20on%20@instatapes%20<%= "http://instatap.es/#{@mixtape.url}" %>" target="_blank">Tweet</a>
+<a class="button large radius share popup" id="twitter" href="http://twitter.com/share?text=Check%20out%20my%20new%20mixtape%20on%20@instatapes%20<%= "http://instatap.es/#{@mixtape.url}" %>" target="_blank">Tweet</a>
 
 <!-- facebook -->
-<a class="button popup" id="facebook" href='http://www.facebook.com/share.php?u=<%= "http://instatap.es/#{@mixtape.url}" %>' target="_blank">Facebook</a>
+<a class="button large radius share popup" id="facebook" href='http://www.facebook.com/share.php?u=<%= "http://instatap.es/#{@mixtape.url}" %>' target="_blank">Facebook</a>
 
