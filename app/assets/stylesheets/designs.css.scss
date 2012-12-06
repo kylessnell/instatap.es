@@ -2,9 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#pick_a_name {
-}
-
 .countdown {
   margin-top: -34px;
   margin-left: 90%;
@@ -13,16 +10,11 @@
 }
 
 #design_picker {
-/*	padding-left:20px;*/
-position: relative;
+  position: relative;
 }
 
 #name_picker {
   margin-bottom: 30px;
-}
-
-#color_picker {
-/*	margin-bottom: 50px;	*/
 }
 
 .section_title {

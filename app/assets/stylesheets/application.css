@@ -73,10 +73,10 @@ input.start_a_new_mix {
 .remove {
     visibility: hidden;
     float: left;
-    border:none;
+    border: none;
     background-color: transparent;
     font-size: 13px;
-    color:grey;
+    color: #969494;
 }
 
 #next_button {
@@ -92,24 +92,24 @@ input.start_a_new_mix {
   margin: 70px auto 0 auto;
 }
 
-#ytplayer{
+#ytplayer {
   height: 250px;
   width: 350px;
 }
 
 #page_header_main {
-  width:100%;
-  line-height:40px;
+  width: 100%;
+  line-height: 40px;
   margin-bottom: 50px;
 }
 
-#page_header_title{
+#page_header_title {
   font-size: 28px;
   font-weight: bold;
   margin-left: 12px;
 }
 
-#page_header_button{
+#page_header_button {
   float: right;
   margin: 0;
 }
