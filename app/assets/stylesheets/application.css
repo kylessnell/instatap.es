@@ -14,9 +14,19 @@
  *= require_tree .
  */
 
+img#header_logo{
+  width: 30%;
+  min-width: 250px;
+  margin-top: 15px;
+}
+
+li#header_logo {
+  font-size: 50px;
+  font-weight: 300;
+}
+
 #tape_container {
-  width: 400px;
-  height: 500px;
+  width: 430px;
   position: relative;
 }
 
@@ -30,33 +40,13 @@
   font-weight: bold;
   margin: 40px 0 0 40px;
   text-align:center;
-  font-size: 22px;
-  font-family:  "Comic Sans MS";
+  font-size: 20px;
+  font-family: 'Rock Salt', cursive;
 }
 
 #mixtape_name_live{
-  font-size: 22px;
-  font-family:  "Comic Sans MS";
-}
-
-#search {
-/*    height: 500px;
-    min-width:00px;
-    max-width:650px;
-    float:left;
-    padding-right: 50px;
-    margin: 100px 100px 0 50px;
-    border-right: solid;
-*/}
-
-#mixtape {
-/*    width:400px;
-    margin: 100px 0 0 0;
-    float:left;*/
-}
-
-#results_id {
-/*    line-height: 26px;*/
+  font-size: 20px;
+  font-family: 'Rock Salt', cursive;
 }
 
 .yt_button {
@@ -64,16 +54,15 @@
     float: left;
     color: black;
     border: 0px;
-    font-size: 12pt;
 }
 
-.remove{
+.remove {
     visibility: hidden;
     float: left;
 }
 
-#next_button {
-	margin-top:100px;
+.new_song {
+  margin: 0;
 }
 
 #youtube_player {

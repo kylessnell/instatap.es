@@ -1,6 +1,8 @@
 <nav id="header">
   <ul>
-    <li id="header_logo">MixTapes</li>
-		<li><%= button_to "Start A New Mix", endsession_path, :class => "button start_a_new_mix" %></li>
+    <li id="header_logo">INSTATAP.ES</li>
+    <% if params[:url] %>
+      <li><%= button_to "Start A New Mix", endsession_path, :class => "button radius start_a_new_mix" %></li>
+    <% end %> 
   </ul>
 </nav>

@@ -1,11 +1,11 @@
-<div class="six columns play">
+<div class="seven columns play">
   <%= image_tag("clear.png") %>
   <div id="mixtape">
     <%= form_for @mixtape do |f| %>
-      <table id="mixtape_track_list"><tbody></tbody></table>
-      <div id="next_button" class="three columns centered">
-        <%= button_to 'Next', mixtapes_path, :class => "button"%>
-      </div>
+      <table id="mixtape_track_list">
+        <tbody>
+        </tbody>
+      </table>
     <% end %>
   </div>
 </div>
