@@ -11,10 +11,7 @@
 
 #ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if Rails.env.development?
 
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.default_charset = "utf-8"
-ActionMailer::Base.perform_deliveries = true
-ActionMailer::Base.raise_delivery_errors = true
+
 ActionMailer::Base.smtp_settings = {
      :authentication => :plain,
      :address => "smtp.mailgun.org",
