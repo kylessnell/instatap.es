@@ -12,3 +12,4 @@
 .DS_store
 /config/locales/api_keys_config.rb
 api_keys_config.rb
+/coverage
