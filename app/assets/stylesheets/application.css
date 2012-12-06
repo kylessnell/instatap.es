@@ -43,7 +43,6 @@ li#header_logo {
   font-size: 20px;
   line-height: 40px;
   font-family: 'Rock Salt', cursive;
-  border: solid;
 }
 
 #mixtape_name_live{
@@ -80,7 +79,7 @@ li#header_logo {
 #page_header_main {
   width:100%;
   line-height:40px;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 #page_header_title{
