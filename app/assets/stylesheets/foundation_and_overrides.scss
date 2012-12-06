@@ -250,3 +250,25 @@ $topBarBreakPoint: 940px; // Change to 9999px for always mobile layout
   font-weight: 200;
   font-style: 'Lato', sans-serif;
 }
+
+table tbody tr td {
+  color: #333;
+  padding: 0px 10px;
+  vertical-align: top;
+  border: none;
+}
+
+.not_playing_icon {
+  margin-top: 5px;
+    width: 90%;
+}
+
+.now_playing_icon {
+  margin-top: 5px;
+    width: 90%;
+}
+
+.now_playing_paused_icon {
+  margin-top: 5px;
+  width: 90%;
+}
