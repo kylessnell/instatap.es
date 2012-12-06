@@ -1,8 +1,10 @@
 <nav id="header">
   <ul>
     <li id="header_logo">INSTATAP.ES</li>
-    <% if params[:url] %>
-      <li><%= button_to "Start A New Mix", endsession_path, :class => "button radius start_a_new_mix" %></li>
+    <% if controller_name == 'mixtapes' && controller.action_name == 'new' %>
+      <li><%= button_to 'Design your Tape', mixtapes_path, :class => "button medium radius start_a_new_mix" %></li>
+    <% elsif controller_name == 'mixtapes' && controller.action_name == 'show' %>
+      <li><%= button_to "Start A New Tape", endsession_path, :class => "button medium radius start_a_new_mix" %></li>
     <% end %> 
   </ul>
 </nav>
