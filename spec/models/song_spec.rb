@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe Song do 
+describe Song do
 
   it "is invalid without an artist" do
     FactoryGirl.build(:song, :artist => nil).should_not be_valid
   end
 
   it "is invalid without a title" do
-    FactoryGirl.build(:song, :title => nil).should_not be_valid
+    build(:song, :title => nil).should_not be_valid
   end
 
   it "is invalid without a tiny_id" do
