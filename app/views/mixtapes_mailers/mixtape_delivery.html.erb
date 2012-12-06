@@ -1,5 +1,11 @@
-<p><%= @recipient_name %>,</p>
-
-<p><%= @author_name %> made a new mixtape for you!</p>
-
-<p><%= link_to "Check it out here", mixtape_path(@mixtape) %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p><%= @recipient_name %>,</p>
+    <p><%= @author_name %> made a new mixtape for you!</p>
+    <p><%= link_to "Check it out here", mixtape_path(@mixtape) %></p>
+  </body>
+</html>

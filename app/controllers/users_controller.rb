@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  skip_filter :authorize_user, :only => [:index]
-
-  def index
-  end
 
   # def update
   #   @current_user = User.find(session[:user_id])
@@ -30,10 +26,10 @@ class UsersController < ApplicationController
   #   end
   # end
 
-  def destroy
-    cookies.delete(:remember_token)
-    clear_session
-    redirect_to root_url
-  end 
+#   def destroy
+#     cookies.delete(:remember_token)
+#     clear_session
+#     redirect_to root_url
+#   end 
 
-end
+ end
