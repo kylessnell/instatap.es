@@ -88,13 +88,19 @@ input.start_a_new_mix {
 }
 
 #youtube_player {
+  background: url('youtube_tv.png');
+  background-size: 100% 100%;
   width: 40%;
   margin: 70px auto 0 auto;
+  padding-left: 34px;
+  padding-top: 34px;
+  padding-right: 110px;
+  padding-bottom: 34px;
 }
 
 #ytplayer {
-  height: 250px;
-  width: 350px;
+  height: 200px;
+  width: 324px;
 }
 
 #page_header_main {
