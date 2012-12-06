@@ -1,6 +1,18 @@
 $(document).ready(function () {
     $("#q").tokenInput("/searches/new.json", {
         tokenLimit: 1,
+        preventDuplicates: true,
+        minChars: 2,
+        searchDelay: 500,
+        onResult: function (results) {
+            var filteredResults = new Array();
+            $.each(results, function (index, value) {
+              if (value.name.toLowerCase().indexOf($('#token-input-q').val().toLowerCase()) !== -1){
+                filteredResults.push(value);
+                }
+            });
+            return filteredResults;
+        },
         onAdd: function(item){
             var items=item.name.split(': ')
             $("#tiny_id_field").val(item.id);
@@ -10,7 +22,6 @@ $(document).ready(function () {
             $('#q').tokenInput("remove", {id: item.id});
         }
     });
-	
 
     $(document).on( 'click', 'button.remove', function(event){
         event.preventDefault();
@@ -32,5 +43,10 @@ $(document).ready(function () {
         cancel:'',
         helper: fixHelper
     }).disableSelection();
+
+    $('.design_your_tape').on('click', function() {
+      $('#next_mixtape').click()
+    })
+
 });
 

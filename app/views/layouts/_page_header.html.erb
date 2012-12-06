@@ -1,0 +1,23 @@
+<% if controller_name == 'mixtapes' && controller.action_name == 'new' %>
+	<div class="row" id="page_header_main">
+	  <div class="nine columns">
+			<div id="page_header_title">Pick some Songs</div>
+	  </div>
+	  <div class="three columns">
+    	<div id="page_header_button">
+	    	<%= button_to 'Design your Tape', mixtapes_path, :class => "button medium radius design_your_tape" %>
+	    </div>
+	  </div>
+	</div>
+<% elsif controller_name == 'designs' && controller.action_name == 'new' %>
+	<div class="row" id="page_header_main">
+  	<div class="nine columns">
+			<div id="page_header_title">Design your Mixtape</div>
+  	</div>
+  	<div class="three columns">
+    	<div id="page_header_button">
+    		<%= button_to 'Share your Tape', mixtapes_path, :class => "button medium radius share_your_tape" %>
+    	</div>
+  	</div>
+	</div>
+<% end %>

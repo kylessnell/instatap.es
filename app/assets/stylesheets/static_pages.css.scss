@@ -17,6 +17,10 @@ body {
   }
 }
 
+#header_buttons {
+  margin: 0;
+}
+
 #header_logo {
   font-size: 50px;
   font-weight: bold;
@@ -76,5 +80,5 @@ body {
 
 #footer a:hover{
   text-decoration: none;
-  color:rgb(30,30,30);
+  color:rgb(10,10,10);
 }

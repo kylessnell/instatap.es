@@ -4,7 +4,6 @@
       <h3 class="section_title">Give your mixtape a name.</h3>
       <div id="pick_a_name">
         <%= f.text_field :name,
-          :placeholder => "eg. Baltimore Classics, 70's Disco, etc",
           :class => "mixtape_name",
           :maxlength => "25",
           :onKeyUp => "TextCount();"
@@ -14,7 +13,7 @@
     </div>
 
     <div id="skin_picker" class="row">
-      <h3 class="section_title">And pick a bad-ass skin.</h3>
+      <h3 class="section_title">And pick a nice skin.</h3>
       <div id="skins" class="row">
         <%= image_tag("clear.png", :alt => "test image", :class => "color thumbnail", id: "clear") %>
         <%= image_tag("black.png", :alt => "test image", :class => "color thumbnail", id: "black") %>
@@ -28,8 +27,8 @@
     <div class="row">
       <%= f.hidden_field :skin, :value => "clear" %>
     </div>
-      <div id="next_button" class="four columns centered">
-        <%= button_to 'Next', mixtapes_path, :class => "radius large button center_button"%>
+      <div id="next_button" class="four columns centered" style="display:none">
+        <%= button_to 'Next', mixtapes_path, :class => "radius large button", :id => "next_design" %>
       </div>
 
   <% end %>

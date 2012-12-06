@@ -30,21 +30,22 @@ input.start_a_new_mix {
 }
 
 #tape_container {
-  width: 430px;
+  width: 420px;
   position: relative;
 }
 
 #mixtape_name_on_tape {
-  width: 310px;
+  width: 350px;
   height: 40px;
   position: absolute;
   top: 0px;
   left: 0px;
   z-index: 100px;
   font-weight: bold;
-  margin: 40px 0 0 40px;
+  margin: 35px 0 0 35px;
   text-align:center;
   font-size: 20px;
+  line-height: 40px;
   font-family: 'Rock Salt', cursive;
 }
 
@@ -58,6 +59,10 @@ input.start_a_new_mix {
     float: left;
     color: black;
     border: 0px;
+    font-size: 12pt;
+    position: relative;
+    left: -54px;
+    padding-left: 54px;
 }
 
 .token-input-dropdown {
@@ -68,6 +73,10 @@ input.start_a_new_mix {
 .remove {
     visibility: hidden;
     float: left;
+}
+
+#next_button {
+    margin-top:100px;
 }
 
 .new_song {
@@ -82,4 +91,21 @@ input.start_a_new_mix {
 #ytplayer{
   height: 250px;
   width: 350px;
+}
+
+#page_header_main {
+  width:100%;
+  line-height:40px;
+  margin-bottom: 50px;
+}
+
+#page_header_title{
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+#page_header_button{
+  float: right;
+  margin: 0;
 }
