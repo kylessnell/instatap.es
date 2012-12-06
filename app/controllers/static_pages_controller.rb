@@ -4,6 +4,10 @@ class StaticPagesController < ApplicationController
   skip_filter :authorize_user
    
   def home
-    @mixtape = Mixtape.last
+  	if Mixtape.find_by_url('6570d3')
+	    @mixtape = Mixtape.find_by_url('6570d3')
+	  else 
+	  	@mixtape = Mixtape.last
+	  end
   end
 end
