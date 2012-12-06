@@ -1,3 +1,8 @@
+FACEBOOK_KEY = ENV['FACEBOOK_KEY']
+FACEBOOK_SECRET = ENV['FACEBOOK_SECRET']
+ECHONEST_API_KEY = ENV['ECHONEST_API_KEY']
+YOUTUBE_API_KEY = ENV['YOUTUBE_API_KEY']
+
 Mixtapes::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
@@ -19,6 +24,10 @@ Mixtapes::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.default_charset = "utf-8"
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH

@@ -3,7 +3,7 @@
   <div class="ten columns">
     <h3>Email Your Mixtape!</h3>
     <%= form_tag url_for(:controller => :mixtapes_mailers,
-                         :action => :create,
+                         :action => :new,
                          ) do %>
     <%= label_tag :author_name %>
     <%= text_field_tag :author_name %>

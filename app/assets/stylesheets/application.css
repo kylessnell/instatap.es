@@ -14,28 +14,135 @@
  *= require_tree .
  */
 
-
-
-#search {
-/*    height: 500px;
-    min-width:00px;
-    max-width:650px;
-    float:left;
-    padding-right: 50px;
-    margin: 100px 100px 0 50px;
-    border-right: solid;
-*/}
-
-#mixtape {
-/*    width:400px;
-    margin: 100px 0 0 0;
-    float:left;*/
+img#header_logo{
+  width: 30%;
+  min-width: 250px;
+  margin-top: 15px;
 }
 
-#results_id {
-/*    line-height: 26px;*/
+li#header_logo {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+input.start_a_new_mix {
+  margin-top: 13px;
+}
+
+#tape_container {
+  width: 430px;
+  position: relative;
+}
+
+#mixtape_name_on_tape {
+  width: 350px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100px;
+  font-weight: bold;
+  margin: 35px 0 0 35px;
+  text-align:center;
+  font-size: 20px;
+  line-height: 40px;
+  font-family: 'Rock Salt', cursive;
+}
+
+#mixtape_name_live{
+  font-size: 20px;
+  font-family: 'Rock Salt', cursive;
+}
+
+.yt_button {
+    background: transparent;
+    float: left;
+    color: black;
+    border: 0px;
+    font-size: 11pt;
+    position: relative;
+    left: -54px;
+    padding-left: 54px;
+}
+
+.token-input-dropdown {
+  font-weight: 200;
+  font-style: 'Lato', sans-serif;
+}
+
+.remove {
+    visibility: hidden;
+    float: left;
+    border: none;
+    background-color: transparent;
+    font-size: 13px;
+    color: #969494;
 }
 
 #next_button {
-	margin-top:100px;
+    margin-top:100px;
+}
+
+.new_song {
+  margin: 0;
+}
+
+#youtube_player {
+  background: url('youtube_tv.png');
+  background-size: 100% 100%;
+  width: 40%;
+  margin: 70px auto 0 auto;
+  padding-left: 34px;
+  padding-top: 34px;
+  padding-right: 110px;
+  padding-bottom: 34px;
+}
+
+#ytplayer {
+  height: 200px;
+  width: 324px;
+}
+
+#page_header_main {
+  width: 100%;
+  line-height: 40px;
+  margin-bottom: 50px;
+}
+
+#page_header_title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+#page_header_button {
+  float: right;
+  margin: 0;
+}
+
+.social_logo {
+  height: 15px;
+  margin-right: 11px;
+}
+
+.next_arrow {
+  height: 18px;
+float: right;
+margin-right: 10%;
+}
+
+.next_arrow_as_button {
+  height: 20px;
+  float: right;
+  margin-right: -1%;
+}
+
+a.design_your_tape {
+  font-weight: 600;
+  width: 110%;
+}
+
+a.share_your_tape {
+  font-weight: 600;
+  width: 110%;
 }

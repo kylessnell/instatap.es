@@ -6,6 +6,7 @@ class Track < ActiveRecord::Base
   validates_presence_of :position
 
 
+  # look at acts_as_list
   def set_position
     self.position = mixtape.songs.all.length + 1
   end

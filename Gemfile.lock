@@ -102,6 +102,8 @@ GEM
     json (1.7.5)
     jwt (0.1.5)
       multi_json (>= 1.0)
+    launchy (2.1.2)
+      addressable (~> 2.3)
     libwebsocket (0.1.7.1)
       addressable
       websocket
@@ -136,6 +138,8 @@ GEM
       omniauth (~> 1.0)
     pg (0.14.1)
     polyglot (0.3.3)
+    pony (1.4)
+      mail (> 2.0)
     pry (0.9.10)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -253,9 +257,11 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   jquery-ui-rails
+  launchy
   mail
   omniauth-facebook
   pg
+  pony
   quiet_assets
   rails (= 3.2.8)
   rails_tokeninput

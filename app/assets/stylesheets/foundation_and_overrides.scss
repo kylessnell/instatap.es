@@ -12,26 +12,26 @@
 
 // Colors Settings
 
-// $mainColor: #2ba6cb;
+$mainColor: #ea3815;
 // $secondaryColor: #e9e9e9;
 // $alertColor: #c60f13;
 // $successColor: #5da423;
-// $txtColor: #222;
-// $highlightColor: #ffff99;
-// $black: #000;
-// $white: #fff;
-// $shinyEdge: rgba(#fff, .5);
-// $darkEdge: rgba(#000, .2);
+$txtColor: #282828;
+$highlightColor: #ff9966;
+$black: #282423;
+$white: #f8f7f7;
+$shinyEdge: rgba(#f8f7f7, .5);
+$darkEdge: rgba(#282423, .2);
 
 // Font Settings
 
 // $fontSmoothing: antialiased;
-// $headerFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $headerFontWeight: bold;
+$headerFontFamily: 'Lato', sans-serif;
+$headerFontWeight: 300;
 // $headerFontStyle: normal;
 // $headerFontColor: #222;
-// $bodyFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $bodyFontWeight: normal;
+$bodyFontFamily: 'Lato', sans-serif;
+$bodyFontWeight: 300;
 // $bodyFontStyle: normal;
 // $bodyFontColor: $txtColor;
 
@@ -41,9 +41,8 @@
 
 // Button Settings
 
-// $buttonRadius: 3px;
+$buttonRadius: 5px;
 // $btnBase: 10px;
-
 // $tinyBtnBase: $btnBase - 5;
 // $smallBtnBase: $btnBase - 3;
 // $largeBtnBase: $btnBase + 5;
@@ -51,13 +50,13 @@
 // Form Settings
 
 // $formSpacing: 12px;
-// $labelFontWeight: 500;
+$labelFontWeight: 300;
 // $labelFontColor: lighten(#000, 30%);
 // $labelBtmMargin: 3px;
 // $inputFontColor: rgba(0,0,0,0.75);
 // $inputFontSize: 14px;
 // $inputBgColor: #fff;
-// $inputFocusBgColor: darken(#fff, 2%);
+$inputFocusBgColor: #fff;
 // $inputBorderColor: darken(#fff, 20%);
 // $inputFocusBorderColor: darken(#fff, 30%);
 // $inputBorderStyle: solid;
@@ -242,3 +241,34 @@ $topBarBreakPoint: 940px; // Change to 9999px for always mobile layout
 // http://www.modularscale.com by Tim Brown
 // https://github.com/scottkellum/modular-scale by scottkellum
 @import 'foundation';
+
+.button {
+  font-weight: 400;
+}
+
+.token-input-dropdown {
+  font-weight: 200;
+  font-style: 'Lato', sans-serif;
+}
+
+table tbody tr td {
+  color: #333;
+  padding: 0px 10px;
+  vertical-align: top;
+  border: none;
+}
+
+.not_playing_icon {
+  margin-top: 5px;
+    width: 90%;
+}
+
+.now_playing_icon {
+  margin-top: 5px;
+    width: 90%;
+}
+
+.now_playing_paused_icon {
+  margin-top: 5px;
+  width: 90%;
+}

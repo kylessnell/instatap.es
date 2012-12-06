@@ -1,6 +1,18 @@
 $(document).ready(function () {
     $("#q").tokenInput("/searches/new.json", {
         tokenLimit: 1,
+        preventDuplicates: true,
+        minChars: 2,
+        searchDelay: 500,
+        onResult: function (results) {
+            var filteredResults = new Array();
+            $.each(results, function (index, value) {
+              if (value.name.toLowerCase().indexOf($('#token-input-q').val().toLowerCase()) !== -1){
+                filteredResults.push(value);
+                }
+            });
+            return filteredResults;
+        },
         onAdd: function(item){
             var items=item.name.split(': ')
             $("#tiny_id_field").val(item.id);
@@ -13,13 +25,39 @@ $(document).ready(function () {
 
     $(document).on( 'click', 'button.remove', function(event){
         event.preventDefault();
-        $(this).parent().remove();
-    } );
+        // this is brittle bc JS has to know about DOM structure.  try to make this more flexible.
+        $(this).parent().parent().remove();
+    });
 
-    $('#mixtape_track_list').sortable({
+    // Return a helper with preserved width of cells
+    var fixHelper = function(e, ui) {
+        ui.children().each(function() {
+            $(this).width($(this).width());
+        });
+        return ui;
+    };
+
+    $('#mixtape_track_list tbody').sortable({
         handle:"button",
         axis:"y",
-        cancel:''
+        cancel:'',
+        helper: fixHelper
     }).disableSelection();
+
+    $('.design_your_tape').on('click', function() {
+        if ($('.design_your_tape').hasClass('disabled')){
+        } else {
+        $('#next_mixtape').click()
+        }
+    })
+
+    $(document).on('ajax:complete', function() {
+        if ($('.ui-sortable tr')[0] == undefined) {
+            $('.design_your_tape').addClass('disabled');
+        } else {
+            $('.design_your_tape').removeClass('disabled');
+        }
+    })
+
 });
 

@@ -1,9 +1,8 @@
 class MixtapesController < ApplicationController
   include SessionsHelper
+  helper_method :current_user
+  before_filter :authorize_user, :only => [:new, :create, :update]
   
-  def index
-  end
-
   def new
     @song = Song.new
     @mixtape = Mixtape.new

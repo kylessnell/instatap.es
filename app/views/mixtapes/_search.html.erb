@@ -1,8 +1,10 @@
 <div class="six columns play">
   <div id="search">
-    
-    <%= form_for new_search_path, :method => 'get' do |f| %>
-      <h3 class="section_title">Pick some good songs</h3>
+      <%= form_for new_search_path, :method => 'get' do |f| %>
+      <div id="search_notice">
+        <p>Search by artist and/or title.</p>
+        <p>Then reorder songs by dragging them up and down.</p>
+      </div>
       <%= f.text_field params[:q], :id => "q" %>
     <% end %>
 
@@ -13,10 +15,7 @@
       <%= f.submit "submit", :id => "create_song_submit", :style => 'visibility: hidden' %>
     <% end %>
 
-    <div id="search_results"> </div>
-
-    <div id="yt_player"> </div>
+    <div id="search_results"></div>
 
   </div>
-<!-- <div ></div> -->
 </div>

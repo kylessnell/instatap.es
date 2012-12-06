@@ -1,6 +1,7 @@
-<%= render 'mixtapes/share' if current_user && owner(@mixtape.url) %>
-
-<h3><%= @mixtape.name %></h3>
-<h4><%= link_to "http://localhost:3000/#{@mixtape.url}", "http://localhost:3000/#{@mixtape.url}" %></h4>
-
-<%= render 'layouts/play' %>
+<div class="ten columns centered share">
+  <h3 id="mixtape_url"><%= link_to "http://instatap.es/#{@mixtape.url}", "http://instatap.es/#{@mixtape.url}" %></h3>
+  <%= render 'mixtapes/share' if current_user && owner(@mixtape.url) %>
+  <div id="show_tape" class="seven columns centered">
+    <%= render 'layouts/play' %>
+  </div>
+</div>

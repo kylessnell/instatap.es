@@ -14,9 +14,9 @@ gem 'jquery-rails'
 gem 'thin'
 gem 'mail'
 gem 'rest-client'
+gem 'pony'
 
 group :test do
-  gem 'capybara'
   gem 'database_cleaner'
 end
 
@@ -30,6 +30,9 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rb-fsevent', :require => false
   gem 'simplecov', :require => false, :group => :test
+  gem 'debugger'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :assets do
@@ -52,5 +55,3 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-gem 'debugger'

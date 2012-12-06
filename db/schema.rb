@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121203074340) do
+ActiveRecord::Schema.define(:version => 20121205043243) do
 
   create_table "mixtapes", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.string   "url"
     t.integer  "user_id"
-    t.string   "skin"
+    t.string   "skin",       :default => "clear"
   end
 
   create_table "songs", :force => true do |t|

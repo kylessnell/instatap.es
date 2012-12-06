@@ -1,31 +1,51 @@
-<div id="design_picker" class="five columns" >
+<div id="design_picker" class="six columns" >
   <%= form_for @mixtape do |f| %>
     <div id="name_picker" class="row">
       <h3 class="section_title">Give your mixtape a name.</h3>
-      <%= f.text_field :name , :placeholder => "eg. Baltimore Classics, 70's Disco, etc", :class =>"" %>
+      <div id="pick_a_name">
+        <%= f.text_field :name,
+          :class => "mixtape_name",
+          :maxlength => "25",
+          :onKeyUp => "TextCount();"
+        %>
+        <div class="countdown">25</div>
+      </div>
     </div>
 
     <div id="skin_picker" class="row">
-      <h3 class="section_title">And pick a bad-ass skin.</h3>
+      <h3 class="section_title">And pick a nice skin.</h3>
       <div id="skins" class="row">
-        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/black.png", :alt => "test image", :class => "color thumbnail", id: "black") %>
-        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/clear.png", :alt => "test image", :class => "color thumbnail", id: "clear") %>
-        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/green.png", :alt => "test image", :class => "color thumbnail", id: "green") %>
-        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/grey.png", :alt => "test image", :class => "color thumbnail", id: "grey") %>
-        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/red.png", :alt => "test image", :class => "color thumbnail", id: "red") %>
-        <%= image_tag("https://dl.dropbox.com/u/6371005/Mixtapes/Assets/yellow.png", :alt => "test image", :class => "color thumbnail", id: "yellow") %>
+        <%= image_tag("clear.png", :alt => "test image", :class => "color thumbnail", id: "clear") %>
+        <%= image_tag("black.png", :alt => "test image", :class => "color thumbnail", id: "black") %>
+        <%= image_tag("green.png", :alt => "test image", :class => "color thumbnail", id: "green") %>
+        <%= image_tag("grey.png", :alt => "test image", :class => "color thumbnail", id: "grey") %>
+        <%= image_tag("red.png", :alt => "test image", :class => "color thumbnail", id: "red") %>
+        <%= image_tag("yellow.png", :alt => "test image", :class => "color thumbnail", id: "yellow") %>
         </div>
     </div>
 
     <div class="row">
-      <div id="mixtape_color">
-      </div>
-      <%= f.hidden_field :skin %>
+      <%= f.hidden_field :skin, :value => "clear" %>
     </div>
-
-      <div id="next_button" class="four columns centered">
-        <%= button_to 'Next', mixtapes_path, :class => "button"%>
+      <div id="next_button" class="four columns centered" style="display:none">
+        <%= button_to 'Next', mixtapes_path, :class => "radius large button", :id => "next_design" %>
       </div>
 
   <% end %>
 </div>
+
+<script language="javascript" type="text/javascript">
+  function TextCount() {
+    $('.countdown')[0].innerHTML = 25 - $('#mixtape_name')[0].value.length;
+    if ($('.countdown')[0].innerHTML === "0") {
+      $('.countdown')[0].style.color = "red";
+      $('.countdown')[0].style.fontWeight = "bold";
+    } else if (parseInt($('.countdown')[0].innerHTML) <= 5) {
+      $('.countdown')[0].style.color = "red";
+      $('.countdown')[0].style.fontWeight = "normal";
+    } else {
+      $('.countdown')[0].style.color = "rgb(150,150,150)";
+      $('.countdown')[0].style.fontWeight = "normal";
+    }
+  }
+</script>

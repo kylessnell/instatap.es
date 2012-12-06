@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   include SessionsHelper
-  skip_filter :authorize_user, :only => [:create, :destroy]
+  helper_method :current_user
+  before_filter :authorize_user, :only => :destroy
 
   def create
     if current_user.nil?
