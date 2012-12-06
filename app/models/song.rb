@@ -5,3 +5,4 @@ class Song < ActiveRecord::Base
   validates_presence_of :title, :artist, :tiny_id, :youtube_id
 #  validates_uniqueness_of :tiny_id, :youtube_id
 end
+
