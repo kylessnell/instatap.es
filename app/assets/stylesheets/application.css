@@ -30,7 +30,7 @@ input.start_a_new_mix {
 }
 
 #tape_container {
-  width: 420px;
+  width: 430px;
   position: relative;
 }
 
@@ -73,6 +73,10 @@ input.start_a_new_mix {
 .remove {
     visibility: hidden;
     float: left;
+    border:none;
+    background-color: transparent;
+    font-size: 13px;
+    color:grey;
 }
 
 #next_button {
