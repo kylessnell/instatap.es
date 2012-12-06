@@ -22,6 +22,7 @@ class MixtapesMailersController < ApplicationController
     })
     redirect_to mixtape_play_path(@mixtape.url)
   end
+  
   # def create
   #   @recipient_name = params[:recipient_name]
   #   @author_name = params[:author_name]
