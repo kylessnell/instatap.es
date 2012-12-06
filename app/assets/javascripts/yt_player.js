@@ -22,7 +22,7 @@ $(document).on('ajax:complete ready', function(){
 
     var params = { allowScriptAccess: "always" };
     var atts = {id: "ytplayer"};
-    swfobject.embedSWF("http://www.youtube.com/v/jPr4JIG_kak?enablejsapi=1&version=3&playerapiid=ytplayer",
+    swfobject.embedSWF("http://www.youtube.com/apiplayer?enablejsapi=1&version=3&playerapiid=ytplayer",
                         "ytplayer_div", "500", "500", "9", null, null, params, atts);
 
     $('.track_list_item').hover(

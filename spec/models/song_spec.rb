@@ -18,15 +18,4 @@ describe Song do
     FactoryGirl.build(:song, :youtube_id => nil).should_not be_valid
   end
 
-  it "is invalid with a duplicate tiny_id" do
-    FactoryGirl.create(:song, :tiny_id => 12345)
-    FactoryGirl.build(:song, :tiny_id => 12345).should_not be_valid
-  end
-
-  it "is invalid with a duplicate youtube_id" do
-    FactoryGirl.create(:song, :youtube_id => 1234567)
-    FactoryGirl.build(:song, :youtube_id => 1234567).should_not be_valid
-  end
-
-
 end
