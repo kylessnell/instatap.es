@@ -6,13 +6,22 @@ module TinySonger
   end
 
   def self.search_results(query)
-    query = CGI::escape(query)
+    query = query.split(' ', 3).concat(query.split(' ', 2)) << query
     key = ECHONEST_API_KEY
-    JSON.parse(RestClient.get"http://developer.echonest.com/api/v4/song/search?api_key=#{key}&artist=#{query}")
+    results = []
+    query.each do |section|
+      if section.length > 2
+        query = CGI::escape(section)
+        artists = JSON.parse(RestClient.get"http://developer.echonest.com/api/v4/song/search?api_key=#{key}&artist=#{query}&song_type=studio&results=15&song_min_hotttnesss=0.3")
+        songs = JSON.parse(RestClient.get"http://developer.echonest.com/api/v4/song/search?api_key=#{key}&title=#{query}&song_type=studio&results=15&song_min_hotttnesss=0.3")
+        results << songs["response"]["songs"].concat(artists["response"]["songs"])
+      end
+    end
+    results.flatten.uniq
   end
 
   def self.all_songs(songs_data)
-    songs_data["response"]["songs"].collect { |song| Result.new(song) }
+    songs_data.collect { |song| Result.new(song) }.uniq
   end
 end
 
@@ -56,7 +65,6 @@ class Result
   end
 
   def as_json(opts={})
-    {:id => self.tiny_id, :name => "#{self.artist}: #{self.title}" }
+    {:id => self.tiny_id, :name => "#{self.artist} #{self.title}" }
   end
 end
-# puts TinySonger.all_songs(TinySonger.search_results("love"))[2].tiny_id

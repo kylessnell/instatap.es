@@ -65,6 +65,9 @@
     color: black;
     border: 0px;
     font-size: 12pt;
+    position: relative;
+    left: -54px;
+    padding-left: 54px;
 }
 
 .remove{
@@ -73,7 +76,7 @@
 }
 
 #next_button {
-	margin-top:100px;
+    margin-top:100px;
 }
 
 #youtube_player {

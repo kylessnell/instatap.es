@@ -63,7 +63,13 @@ $(document).on('ajax:complete', function(){
         });
     };
 
+    // $('.track_list_item img').click(function(){
+    //    $(this).closest('button').trigger('click');
+    // })
+
     $('.yt_button').off("click");
+
+
 
     $('.yt_button').click(function(){
         if ($(this).attr('now_playing') == 'false'){
