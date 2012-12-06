@@ -8,11 +8,11 @@ body {
 
 #header {
   margin-bottom: 60px;
-  padding-bottom:90px;
+  padding-bottom: 90px;
   border-top: solid #39393C 8px;
   border-bottom: solid #39393C 1px;
   ul {
-    list-style-type:none;
+    list-style-type: none;
     display: inline;
   }
 }
@@ -25,13 +25,13 @@ body {
   font-size: 50px;
   font-weight: bold;
   color: #39393C;
-  float:left;
+  float: left;
 }
 
 .start_a_new_mix {
   font-weight: normal;
   font-size: 14px;
-  float:right;
+  float: right;
 }
 
 .play {
@@ -80,5 +80,5 @@ body {
 
 #footer a:hover{
   text-decoration: none;
-  color:rgb(10,10,10);
+  color: rgb(10,10,10);
 }
