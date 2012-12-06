@@ -45,7 +45,18 @@ $(document).ready(function () {
     }).disableSelection();
 
     $('.design_your_tape').on('click', function() {
-      $('#next_mixtape').click()
+        if ($('.design_your_tape').hasClass('disabled')){
+        } else {
+        $('#next_mixtape').click()
+        }
+    })
+
+    $(document).on('ajax:complete', function() {
+        if ($('.ui-sortable tr')[0] == undefined) {
+            $('.design_your_tape').addClass('disabled');
+        } else {
+            $('.design_your_tape').removeClass('disabled');
+        }
     })
 
 });
