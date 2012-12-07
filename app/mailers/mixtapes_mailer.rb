@@ -3,6 +3,6 @@ class MixtapesMailer < ActionMailer::Base
 
     def mixtape_delivery(author_name, recipient_email)
       mail( :to => recipient_email,
-      :subject => "#{author.name} has shared an Instatape with you!" )
+      :subject => "#{author_name} has shared an Instatape with you!" )
     end
   end
