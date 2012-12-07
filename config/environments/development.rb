@@ -20,7 +20,7 @@ Mixtapes::Application.configure do
     :user_name => "instatap.es",
     :password => "phattrax",
     :domain => "instatap.es",
-    :address => "smtp.gmail.com",
+    :address => "smtp.sendgrid.net",
     :port => 587,
     :authentication => :plain,
     :enable_starttls_auto => true
