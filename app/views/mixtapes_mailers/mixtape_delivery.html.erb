@@ -1,5 +1,5 @@
 <body>
-  <p><%= @recipient_name %>,</p><br />
-  <p><%= @author_name %> made you a new Instatape!</p><br />
+  <p><%= "Hi #{@recipient_name}," %></p>
+  <p><%= "#{@author_name} shared an Instatape with you!" %></p>
   <p><%= link_to "Check it out here", mixtape_path(@mixtape) %></p><br /><br />
 </body>
