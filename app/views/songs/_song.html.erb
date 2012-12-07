@@ -7,7 +7,7 @@
     <%= button_tag "#{song.artist} #{song.title}", :class => "yt_button", :list_position => "", :yt_id => song.youtube_id, :now_playing => "false", :type => "button" %>
   </td>
   <td>
-    <% if controller_name == 'mixtapes' && controller.action_name == 'new' %>
+    <% if controller_name == 'songs' && controller.action_name == 'create' %>
       <%= button_tag "x", :class => "remove" %>
     <% end %>
   </td>

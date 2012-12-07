@@ -44,13 +44,15 @@ $(document).ready(function () {
         helper: fixHelper
     }).disableSelection();
 
+    // Disables the click if the button has style 'disabled' 
     $('.design_your_tape').on('click', function() {
-        if ($('.design_your_tape').hasClass('disabled')){
+      if ($('.design_your_tape').hasClass('disabled')){
         } else {
-        $('#next_mixtape').click()
+      $('#next_mixtape').click()
         }
     })
 
+    // Checks for presence of songs in the mixtape and updates the 'disabled' attribute accordingly
     $(document).on('ajax:complete', function() {
         if ($('.ui-sortable tr')[0] == undefined) {
             $('.design_your_tape').addClass('disabled');
